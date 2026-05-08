@@ -1,20 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Mingu Kang logo">
-  <defs>
-    <linearGradient id="bg" x1="30" y1="24" x2="230" y2="236" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#1d4ed8"/>
-      <stop offset="0.52" stop-color="#0f766e"/>
-      <stop offset="1" stop-color="#22c55e"/>
-    </linearGradient>
-    <linearGradient id="frame" x1="58" y1="61" x2="197" y2="194" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#dbeafe"/>
-      <stop offset="1" stop-color="#bbf7d0"/>
-    </linearGradient>
-  </defs>
-  <rect width="256" height="256" rx="58" fill="url(#bg)"/>
-  <path d="M68 78c0-11 9-20 20-20h80c11 0 20 9 20 20v100c0 11-9 20-20 20H88c-11 0-20-9-20-20V78Z" fill="none" stroke="url(#frame)" stroke-width="13"/>
-  <path d="M67 96h122M67 160h122" stroke="#ecfeff" stroke-width="10" stroke-linecap="round" opacity=".82"/>
-  <path d="M95 182V82h16l20 42 20-42h16v100h-18v-62l-14 29h-8l-14-29v62H95Z" fill="#f8fafc"/>
-  <path d="M134 132l35-50h20l-34 47 37 53h-21l-27-39-10 14v25h-18V82h18v50Z" fill="#f8fafc" opacity=".96"/>
-  <circle cx="191" cy="64" r="16" fill="#fde047"/>
-  <circle cx="191" cy="64" r="7" fill="#38bdf8"/>
+  <rect width="256" height="256" rx="58" fill="#111111"/>
+  <path d="M68 78c0-11 9-20 20-20h80c11 0 20 9 20 20v100c0 11-9 20-20 20H88c-11 0-20-9-20-20V78Z" fill="none" stroke="#ffffff" stroke-width="13"/>
+  <path d="M67 96h122M67 160h122" stroke="#ffffff" stroke-width="10" stroke-linecap="round" opacity=".76"/>
+  <path d="M95 182V82h16l20 42 20-42h16v100h-18v-62l-14 29h-8l-14-29v62H95Z" fill="#ffffff"/>
+  <path d="M134 132l35-50h20l-34 47 37 53h-21l-27-39-10 14v25h-18V82h18v50Z" fill="#ffffff" opacity=".96"/>
+  <circle cx="191" cy="64" r="16" fill="#ffffff"/>
+  <circle cx="191" cy="64" r="7" fill="#111111"/>
 </svg>
