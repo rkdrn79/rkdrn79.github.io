@@ -1,7 +1,7 @@
 papers:
   - title: "From Matching to Reasoning: Query-Aware Long Video Summarization"
     authors: "<b>Mingu Kang</b>, Sumin Kim, Hyunjin Lee, Sungmin Yang, Yoori Oh, Joonseok Lee"
-    venue: "International Conference on Learning Representations (ICLR), 2026."
+    venue: "Preprint, 2026."
     selected: y
     type: preprint
     year: 2026
