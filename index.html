@@ -32,36 +32,6 @@ title: Home
   </ul>
 </div>
 
-<!-- ========== EXPERIENCE ========== -->
-<div class="docs-section" id="experience">
-  <h4>Research Experience</h4>
-  {% for exp in site.data.experience.experiences %}
-    <div class="paper experience-card">
-      <div class="row">
-        <div class="three columns">
-          <div class="figure">
-            {% if exp.logo %}
-              <img src="{{ '/assets/logos/' | append: exp.logo | prepend: site.baseurl }}" width="{{ exp.width }}%" alt="{{ exp.place }} logo">
-            {% else %}
-              <img src="{{ '/assets/logos/default.png' | prepend: site.baseurl }}" width="55%" alt="">
-            {% endif %}
-          </div>
-        </div>
-        <div class="nine columns">
-          <p><b>{{ exp.place }}</b> <b class="right-meta"><i>{{ exp.location }}</i></b></p>
-          <p>{{ exp.title }} <b class="right-meta"><i>{{ exp.time }}</i></b></p>
-          {% if exp.supervisor %}
-            <p>{{ exp.supervisor }}</p>
-          {% endif %}
-          {% if exp.summary %}
-            <p>{{ exp.summary }}</p>
-          {% endif %}
-        </div>
-      </div>
-    </div>
-  {% endfor %}
-</div>
-
 <!-- ========== PUBLICATIONS ========== -->
 <div class="docs-section" id="publications">
   <h4 class="section-title">
@@ -118,6 +88,45 @@ title: Home
       {% endfor %}
     </div>
   </div>
+</div>
+
+<!-- ========== EXPERIENCE ========== -->
+<div class="docs-section" id="experience">
+  <h4>Research Experience</h4>
+  {% for exp in site.data.experience.experiences %}
+    <div class="paper experience-card">
+      <div class="row">
+        <div class="three columns">
+          <div class="figure">
+            {% if exp.logo %}
+              <img src="{{ '/assets/logos/' | append: exp.logo | prepend: site.baseurl }}" width="{{ exp.width }}%" alt="{{ exp.place }} logo">
+            {% else %}
+              <img src="{{ '/assets/logos/default.png' | prepend: site.baseurl }}" width="55%" alt="">
+            {% endif %}
+          </div>
+        </div>
+        <div class="nine columns">
+          <p><b>{{ exp.place }}</b> <b class="right-meta"><i>{{ exp.location }}</i></b></p>
+          <p>{{ exp.title }} <b class="right-meta"><i>{{ exp.time }}</i></b></p>
+          {% if exp.supervisor %}
+            <p>{{ exp.supervisor }}</p>
+          {% endif %}
+          {% if exp.lab %}
+            <p>
+              {% if exp.lab_url %}
+                <a href="{{ exp.lab_url }}" target="_blank">{{ exp.lab }}</a>
+              {% else %}
+                {{ exp.lab }}
+              {% endif %}
+            </p>
+          {% endif %}
+          {% if exp.summary %}
+            <p>{{ exp.summary }}</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
 </div>
 
 <!-- ========== AWARDS ========== -->

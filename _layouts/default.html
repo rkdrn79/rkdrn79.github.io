@@ -57,8 +57,8 @@
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href={{ "/libs/icon.png" | prepend: site.baseurl }}>
-  <link rel="shortcut icon" type="image/png" href={{ "/libs/icon.png" | prepend: site.baseurl }}>
+  <link rel="icon" type="image/png" href={{ "/assets/favicon.png" | prepend: site.baseurl }}>
+  <link rel="shortcut icon" type="image/png" href={{ "/assets/favicon.png" | prepend: site.baseurl }}>
 
 </head>
 <body>
@@ -79,7 +79,7 @@
             <div class="social-links">
               {% if site.data.main_info.cv %}
                 <a href="{{ site.data.main_info.cv | prepend: site.baseurl }}" target="_blank" class="social-link" title="CV">
-                  <i class="fa-solid fa-file-pdf"></i>
+                  <i class="ai ai-cv"></i>
                 </a>
               {% endif %}
               {% if site.data.main_info.linkedin %}
@@ -108,8 +108,8 @@
         <ul class="navbar-list">
           <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#bio" | prepend: site.baseurl }}>Bio</a></li>
           <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#research" | prepend: site.baseurl }}>Research</a></li>
-          <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#experience" | prepend: site.baseurl }}>Experience</a></li>
           <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#publications" | prepend: site.baseurl }}>Publications</a></li>
+          <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#experience" | prepend: site.baseurl }}>Experience</a></li>
           <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#awards" | prepend: site.baseurl }}>Awards</a></li>
           <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#scholarships" | prepend: site.baseurl }}>Scholarship</a></li>
           <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#resume" | prepend: site.baseurl }}>CV</a></li>

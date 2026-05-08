@@ -4,7 +4,8 @@ experiences:
     time: "Present"
     title: "M.S./Ph.D. Student"
     supervisor: "Advisor: Joonseok Lee"
-    summary: "VIP Lab"
+    lab: "VIP Lab"
+    lab_url: "https://viplab.snu.ac.kr/viplab/index.html"
     logo: "snu.png"
     width: 55
 
@@ -13,9 +14,10 @@ experiences:
     time: "Previously"
     title: "Research Intern"
     supervisor: "Advisor: Beomjoon Kim"
-    summary: "Humanoid Generalization Lab"
-    logo: "default.png"
-    width: 55
+    lab: "Humanoid Generalization Lab"
+    lab_url: "https://www.hugelab.org/"
+    logo: "kaistai.png"
+    width: 85
     category: work
 
   - place: "Sungkyunkwan University"
@@ -23,7 +25,8 @@ experiences:
     time: "Previously"
     title: "Research Intern"
     supervisor: "Advisor: Yusung Kim"
-    summary: "Computer System Intelligence Lab"
-    logo: "default.png"
-    width: 55
+    lab: "Computer System Intelligence Lab"
+    lab_url: "https://sites.google.com/view/yskim525/home"
+    logo: "sungkyunkwan.svg"
+    width: 75
     category: work
