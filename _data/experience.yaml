@@ -1,0 +1,29 @@
+experiences:
+  - place: "Seoul National University"
+    location: "Seoul, South Korea"
+    time: "Present"
+    title: "M.S./Ph.D. Student"
+    supervisor: "Advisor: Joonseok Lee"
+    summary: "VIP Lab"
+    logo: "snu.png"
+    width: 55
+
+  - place: "KAIST Graduate School of AI"
+    location: "Daejeon, South Korea"
+    time: "Previously"
+    title: "Research Intern"
+    supervisor: "Advisor: Beomjoon Kim"
+    summary: "Humanoid Generalization Lab"
+    logo: "default.png"
+    width: 55
+    category: work
+
+  - place: "Sungkyunkwan University"
+    location: "Suwon, South Korea"
+    time: "Previously"
+    title: "Research Intern"
+    supervisor: "Advisor: Yusung Kim"
+    summary: "Computer System Intelligence Lab"
+    logo: "default.png"
+    width: 55
+    category: work

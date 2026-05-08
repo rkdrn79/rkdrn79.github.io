@@ -1,0 +1,23 @@
+<section class="gallery" aria-label="Poems">
+  {% assign poems = site.poems %}
+  {% for p in poems %}
+    <div class="album poem-album{% if p.category == 'html' %} poem-content_escape{% endif %}" data-title="{{ p.title | escape }}" data-content="{{ p.content | escape }}" data-author="{{ p.author | escape }}">
+      <figure class="art">
+        <div class="cover"></div>
+        <figcaption class="title">{{ p.title }}<br>- {{ p.author }}</figcaption>
+      </figure>
+    </div>
+  {% endfor %}
+</section>
+
+<!-- Popup modal -->
+<div id="poem-modal" class="modal">
+  <span class="close">&times;</span>
+  <div class="modal-content">
+    <h2 id="poem-title"></h2>
+    <p><em id="poem-author"></em></p>
+    <div class="poem-text">
+      <pre id="poem-body"></pre>
+    </div>
+  </div>
+</div>

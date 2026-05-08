@@ -1,0 +1,111 @@
+---
+layout: default
+---
+
+<div class="docs-section" id="blog-post">
+  <p class="post-meta">
+    <a href="{{ '/blog/' | prepend: site.baseurl }}">&larr; Back to Blog</a>
+  </p>
+
+  <div class="garden-layout">
+    <div class="garden-content">
+      <h3>{{ page.title }}</h3>
+
+      <p class="post-meta">
+        {{ page.date | date: "%B %d, %Y" }}
+        {% if page.tags.size > 0 %}
+          &nbsp;&bull;&nbsp;
+          {% for tag in page.tags %}
+            <span class="tag">{{ tag }}</span>
+          {% endfor %}
+        {% endif %}
+      </p>
+
+      <div class="post-content">
+        {{ content }}
+      </div>
+    </div>
+
+    <aside class="garden-sidebar">
+      <!-- Backlinks Section -->
+      <div class="backlinks-section">
+        <h5>Backlinks</h5>
+        {% assign backlinks = "" | split: "" %}
+        {% for post in site.posts %}
+          {% if post.url != page.url %}
+            {% assign post_content_lower = post.content | downcase %}
+            {% assign page_title_lower = page.title | downcase %}
+            {% if post_content_lower contains page_title_lower %}
+              {% assign backlinks = backlinks | push: post %}
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+
+        {% if backlinks.size > 0 %}
+          {% for backlink in backlinks %}
+            <a class="backlink-item" href="{{ backlink.url | prepend: site.baseurl }}">
+              {{ backlink.title }}
+              <div class="backlink-context">{{ backlink.date | date: "%b %d, %Y" }}</div>
+            </a>
+          {% endfor %}
+        {% else %}
+          <p style="color: #888; font-size: 13px;">No other posts reference this note yet.</p>
+        {% endif %}
+      </div>
+
+      <!-- Related Posts by Tags -->
+      {% if page.tags.size > 0 %}
+      <div class="backlinks-section" style="margin-top: 20px;">
+        <h5>Related Notes</h5>
+        {% assign related_posts = "" | split: "" %}
+        {% for post in site.posts %}
+          {% if post.url != page.url %}
+            {% for tag in page.tags %}
+              {% if post.tags contains tag %}
+                {% unless related_posts contains post %}
+                  {% assign related_posts = related_posts | push: post %}
+                {% endunless %}
+                {% break %}
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+        {% endfor %}
+
+        {% if related_posts.size > 0 %}
+          {% for related in related_posts limit: 5 %}
+            <a class="backlink-item" href="{{ related.url | prepend: site.baseurl }}">
+              {{ related.title }}
+              <div class="backlink-context">
+                {% for tag in related.tags %}
+                  {% if page.tags contains tag %}
+                    <span class="tag" style="font-size: 9px;">{{ tag }}</span>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            </a>
+          {% endfor %}
+        {% else %}
+          <p style="color: #888; font-size: 13px;">No related notes found.</p>
+        {% endif %}
+      </div>
+      {% endif %}
+    </aside>
+  </div>
+</div>
+
+<script>
+  // Initialize KaTeX after page load
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof renderMathInElement !== 'undefined') {
+      renderMathInElement(document.querySelector('.post-content'), {
+        delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false},
+          {left: '\\(', right: '\\)', display: false},
+          {left: '\\[', right: '\\]', display: true}
+        ],
+        throwOnError: false
+      });
+    }
+  });
+</script>

@@ -1,0 +1,16 @@
+JiwanChung.github.io/
+_site/
+.DS_Store
+libs/external/font-awesome-4.7.0/
+libs/external/fontawesome-free-6.6.0-web/css/*
+!libs/external/fontawesome-free-6.6.0-web/css/all.min.css
+libs/external/fontawesome-free-6.6.0-web/js/
+libs/external/fontawesome-free-6.6.0-web/less/
+libs/external/fontawesome-free-6.6.0-web/metadata/
+libs/external/fontawesome-free-6.6.0-web/scss/
+libs/external/fontawesome-free-6.6.0-web/sprites/
+libs/external/fontawesome-free-6.6.0-web/svgs/
+libs/external/academicons-1.8.6/.gitattributes
+libs/external/academicons-1.8.6/README.md
+libs/external/academicons-1.8.6/bower.json
+libs/external/academicons-1.8.6/css/academicons.css

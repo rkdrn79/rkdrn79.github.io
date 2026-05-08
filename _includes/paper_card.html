@@ -1,0 +1,57 @@
+{% assign paper = include.paper %}
+<div class="paper-card" data-type="{{ paper.type }}" data-year="{{ paper.year }}" data-keywords="{{ paper.keywords | join: ',' }}">
+  <div class="paper-year-badge">{{ paper.year }}</div>
+  <div class="paper-type-indicator {{ paper.type }}"></div>
+  <div class="paper-content">
+    <h5 class="paper-title">{{ paper.title }}</h5>
+    <p class="paper-authors">{{ paper.authors }}</p>
+    <p class="paper-venue">{{ paper.venue }}</p>
+    {% if paper.note %}
+      <p class="paper-note">{{ paper.note }}</p>
+    {% endif %}
+    {% if paper.keywords %}
+      <div class="paper-keywords">
+        {% for kw in paper.keywords %}
+          <span class="keyword-chip">{{ kw }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+    <div class="paper-actions">
+      {% if paper.paper_pdf %}
+        <a class="action-btn" href="{{ paper.paper_pdf | prepend: site.baseurl }}" target="_blank" title="Paper">
+          <i class="fa-solid fa-file-pdf"></i>
+        </a>
+      {% endif %}
+      {% if paper.code %}
+        <a class="action-btn" href="{{ paper.code }}" target="_blank" title="Code">
+          <i class="fa-brands fa-github"></i>
+        </a>
+      {% endif %}
+      {% if paper.data %}
+        <a class="action-btn" href="{{ paper.data }}" target="_blank" title="Data">
+          <i class="fa-solid fa-database"></i>
+        </a>
+      {% endif %}
+      {% if paper.model %}
+        <a class="action-btn" href="{{ paper.model }}" target="_blank" title="Model">
+          <i class="fa-solid fa-cube"></i>
+        </a>
+      {% endif %}
+      {% if paper.webpage %}
+        <a class="action-btn" href="{{ paper.webpage }}" target="_blank" title="Website">
+          <i class="fa-solid fa-globe"></i>
+        </a>
+      {% endif %}
+      {% if paper.video %}
+        <a class="action-btn" href="{{ paper.video }}" target="_blank" title="Video">
+          <i class="fa-solid fa-play"></i>
+        </a>
+      {% endif %}
+      {% if paper.bibtex %}
+        <button class="action-btn bibtex-trigger" data-bibtex="{{ paper.bibtex | escape }}" title="Copy BibTeX">
+          <i class="fa-solid fa-quote-right"></i>
+        </button>
+      {% endif %}
+    </div>
+  </div>
+</div>

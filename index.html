@@ -1,329 +1,182 @@
-<!DOCTYPE HTML>
-<html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+---
+layout: default
+title: Home
+---
 
-    <title>Mingu Kang</title>
+<!-- ========== BIO ========== -->
+<div class="docs-section" id="bio">
+  <h4>Bio</h4>
+  {% for paragraph in site.data.profile.bio %}
+    <p>{{ paragraph }}</p>
+  {% endfor %}
+</div>
 
-    <meta name="author" content="Mingu Kang">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
-  </head>
+<!-- ========== RESEARCH ========== -->
+<div class="docs-section" id="research">
+  <h4>Research</h4>
+  {% for paragraph in site.data.profile.research %}
+    <p>{{ paragraph }}</p>
+  {% endfor %}
+</div>
 
-  <body>
-    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-      <tr style="padding:0px">
-        <td style="padding:0px">
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr style="padding:0px">
-              <td style="padding:2.5%;width:63%;vertical-align:middle">
-                <p class="name" style="text-align: center; font-family: 'Georgia', serif; font-size: 36px; font-weight: 500;">
-                  Mingu Kang
-                  </p>
-                  <p>I’m an M.S./Ph.D. student at the <a href="https://viplab.snu.ac.kr/index.html">VIP Lab</a>, <a href="https://www.snu.ac.kr/">Seoul National University</a>, advised by <a href="http://www.joonseok.net/home.html">Prof. Joonseok Lee</a>.</p>
+<!-- ========== NEWS ========== -->
+<div class="docs-section" id="news">
+  <h4>News</h4>
+  <ul class="news-list">
+    {% for item in site.data.news.news %}
+      <li>
+        <span class="news-date">{{ item.date }}</span>
+        <span>{{ item.text }}</span>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
 
-                  <p>Previously, I was a research intern at the <a href="https://hugelab.org/">Humanoid Generalization Lab</a>, <a href="https://gsai.kaist.ac.kr/">Graduate School of AI at KAIST</a>, advised by <a href="https://beomjoonkim.github.io/">Prof. Beomjoon Kim</a>, and at the <a href="https://sites.google.com/view/yskim525/home?authuser=0">Computer System Intelligence Lab</a>, <a href="https://www.skku.edu/eng/index.do">Sungkyunkwan University</a>, advised by Prof. Yusung Kim</a>.</p>
-                  <p style="text-align:center">
-                  <a href="mailto:gms5560@g.skku.edu">Email</a> &nbsp;/&nbsp;
-                  <a href="data/Mingu_Kang_CV_2025_7_26.pdf">CV</a> &nbsp;/&nbsp;
-                  <a href="https://scholar.google.com/citations?user=ZIx34voAAAAJ&hl=ko">Google Scholar</a> &nbsp;/&nbsp;
-                  <a href="https://github.com/rkdrn79">Github</a> &nbsp;/&nbsp;
-                  <a href="https://www.linkedin.com/in/mingu-kang-96523a302/">LinkedIn</a>
-                </p>
-              </td>
-              <td style="padding:2.5%;width:37%;max-width:37%">
-                <a href="images/me/profile1.png">
-                  <img style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover;" 
-                       alt="profile photo" 
-                       src="images/me/profile1.png" 
-                       class="hoverZoomLink">
-                </a>
-              </td>
-            </tr>
-          </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-              <tr>
-              <td style="padding:16px;width:100%;vertical-align:middle">
-                <h2 style="margin-bottom: 24px; font-weight: bold; font-size: 24px; font-family: 'Merriweather', serif;">Research</h2>
-                <p>
-                  I am interested in video understanding, studying how temporal dynamics and high-level semantics can be effectively modeled to enable downstream tasks such as video summarization and video retrieval.                </p>
-              </td>
-            </tr>
-          </tbody></table>
+<!-- ========== EXPERIENCE ========== -->
+<div class="docs-section" id="experience">
+  <h4>Research Experience</h4>
+  {% for exp in site.data.experience.experiences %}
+    <div class="paper experience-card">
+      <div class="row">
+        <div class="three columns">
+          <div class="figure">
+            {% if exp.logo %}
+              <img src="{{ '/assets/logos/' | append: exp.logo | prepend: site.baseurl }}" width="{{ exp.width }}%" alt="{{ exp.place }} logo">
+            {% else %}
+              <img src="{{ '/assets/logos/default.png' | prepend: site.baseurl }}" width="55%" alt="">
+            {% endif %}
+          </div>
+        </div>
+        <div class="nine columns">
+          <p><b>{{ exp.place }}</b> <b class="right-meta"><i>{{ exp.location }}</i></b></p>
+          <p>{{ exp.title }} <b class="right-meta"><i>{{ exp.time }}</i></b></p>
+          {% if exp.supervisor %}
+            <p>{{ exp.supervisor }}</p>
+          {% endif %}
+          {% if exp.summary %}
+            <p>{{ exp.summary }}</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
 
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-              <tr>
-              <td style="padding:16px;width:100%;vertical-align:middle">
-                <h2 style="margin-bottom: 24px; font-weight: bold; font-size: 24px; font-family: 'Merriweather', serif;">News</h2>
-                <p>
-                  [2026.02] Our paper TripleSumm are accepted to ICLR 2026.<br>
-                  [2025.06] Our paper DisCoRD are accepted to ICCV 2025(Highlight).
-                </p>
-              </td>
-            </tr>
-          </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-              <td style="padding:16px;width:100%;vertical-align:middle">
-                <h2 style="margin-bottom: 24px; font-weight: bold; font-size: 24px; font-family: 'Merriweather', serif;">Publications</h2>
-                
-                <!-- Paper TripleSumm -->
-                <div style="display:flex; gap:16px; margin-bottom:24px; align-items:center;">
-                  <img src="images/paper/TripleSumm.png" style="width:160px; object-fit:cover;">
-                  <div>
-                    <span class="papertitle">TripleSumm: Adaptive Triple-Modality Fusion for Video Summarization</span>
-                    Sumin Kim *, Hyemin Jung *, <u><strong>Mingu Kang *</strong></u>, Yejin Kim, Yoori Oh, Joonseok Lee<br>
-                    <em>International Conference on Learning Representations (ICLR) 2026</em><br>
+<!-- ========== PUBLICATIONS ========== -->
+<div class="docs-section" id="publications">
+  <h4 class="section-title">
+    <span class="title-decoration"></span>
+    Publications
+    <span class="title-decoration"></span>
+  </h4>
 
-                  </div>
-                </div>
+  <p class="section-subtitle">
+    Research outputs across venues. * = equal contribution.
+    <a href="{{ site.data.main_info.google_scholar }}" target="_blank" class="scholar-link">
+      <i class="ai ai-google-scholar"></i> Full list on Scholar
+    </a>
+  </p>
 
-                <!-- Paper DisCoRD -->
-                <div style="display:flex; gap:16px; margin-bottom:24px; align-items:center;">
-                  <img src="images/paper/Discord_figure.png" style="width:160px; object-fit:cover;">
-                  <div>
-                    <span class="papertitle">DisCoRD: Discrete Tokens to Continuous Motion via Rectified Flow Decoding</span>
-                    Jungbin Cho *, Junwan Kim *, Jisoo Kim, Minseo Kim, <u><strong>Mingu Kang</strong></u>, Seuneun Hong, Tae-Hyun Oh, Youngjae Yu<br>
-                    <em>International Conference of Computer Vision (ICCV) 2025</em> <strong>(Highlight)</strong><br>
-                    <a href="https://whwjdqls.github.io/discord-motion/">[projcet]</a><a href="https://arxiv.org/abs/2411.19527">[arXiv]</a>
-                  </div>
-                </div>
+  <div class="filter-bar">
+    <div class="filter-pills" id="view-toggle">
+      <button class="pill active" data-ref="#papers-selected">Selected</button>
+      <button class="pill" data-ref="#papers-all">All</button>
+    </div>
+    <div class="filter-divider"></div>
+    <div class="filter-pills" id="type-filter">
+      <button class="pill small active" data-filter-type="type" data-filter-value="all">All</button>
+      <button class="pill small" data-filter-type="type" data-filter-value="conference">
+        <span class="pill-dot conference"></span>Conf
+      </button>
+      <button class="pill small" data-filter-type="type" data-filter-value="preprint">
+        <span class="pill-dot preprint"></span>Preprint
+      </button>
+    </div>
+    <div class="filter-divider"></div>
+    <div class="year-slider-container">
+      <input type="range" id="year-slider" min="2024" max="2026" value="2026" class="year-slider">
+      <div class="year-labels">
+        <span>2024</span>
+        <span id="year-display">All Years</span>
+        <span>2026</span>
+      </div>
+    </div>
+    <div class="active-filters" id="active-filters"></div>
+  </div>
 
-                <!-- Paper effi kd korea version -->
-                <div style="display:flex; gap:16px; margin-bottom:24px; align-items:center;">
-                  <img src="images/paper/efficient_kd.png" style="width:160px; object-fit:cover;">
-                  <div>
-                    <span class="papertitle">Examination of Efficient Strategies on Knowledge Distillation Methods in Continual Learning</span>
-                    Euiseog Jeong *, <u><strong>Mingu Kang *</strong></u>, MyeongSeop Kim *, Eunil Park<br>
-                    <em>Korean Institute of Information Scientists and Engineers (KIISE) 2024<br>
-                    <a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12042097">[paper]</a>
-                  </div>
-                </div>
-              </td>
-            </tr>
-          </tbody></table>
+  <div class="tab-content">
+    <div class="tab-pane active" id="papers-selected">
+      {% assign selected_papers = site.data.publications.papers | where: "selected", "y" %}
+      {% for paper in selected_papers %}
+        {% include paper_card.html paper=paper %}
+      {% endfor %}
+    </div>
 
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-              <td style="padding:16px;width:100%;vertical-align:middle">
-                <h2 style="margin-bottom: 24px; font-weight: bold; font-size: 24px; font-family: 'Merriweather', serif;">Awards</h2>
+    <div class="tab-pane" id="papers-all">
+      {% for paper in site.data.publications.papers %}
+        {% include paper_card.html paper=paper %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
 
-                <!-- Toggle Links -->
-                <div style="margin-bottom: 12px;">
-                  <a href="#" onclick="showAwards('selected'); return false;" id="selectedLink" style="font-weight: bold; text-decoration: underline; color: #0033B3; margin-right: 8px;">Selected</a>
-                  <a href="#" onclick="showAwards('all'); return false;" id="allLink" style="color: #d0d0d0; text-decoration: none;">All</a>
-                </div>
+<!-- ========== AWARDS ========== -->
+<div class="docs-section" id="awards">
+  <h4>Awards</h4>
+  <div class="filter-bar compact-filter" data-toggle-group="awards">
+    <div class="filter-pills">
+      <button class="pill active" data-target="#awards-selected">Selected</button>
+      <button class="pill" data-target="#awards-all">All</button>
+    </div>
+  </div>
 
-                <!-- Awards Lists -->
-                <!-- Selected Awards -->
-                <div id="selectedAwards" style="margin-top: 0px;">
-                  <div style="display:flex; gap:16px; margin-bottom:24px; align-items:flex-start;">
-                    <div>
-                      <span class="papertitle"> Best Research Award </span>
-                      Top-rated research selected by industry and government-funded institutes evaluators.<br>
-                      <em>SKKU IME Annual Research Review</em>, Nov 2025
-                    </div>
-                  </div>
-                  <div style="display:flex; gap:16px; margin-bottom:24px; align-items:flex-start;">
-                    <div>
-                      <span class="papertitle">Minister of Employment and Labor Award</span>
-                      Developed an AI model to predict the likelihood of pregnancy success in infertile patients.<br>
-                      <em>LG AI Research</em>, Apr 2025
-                    </div>
-                  </div>
-                  <div style="display:flex; gap:16px; margin-bottom:24px; align-items:flex-start;">
-                    <div>
-                      <span class="papertitle">Minister of Science and ICT Award</span>
-                      Development of an AI model to detect the fake voice of the generating AI.<br>
-                      <em>SW Centered University</em>, Aug 2024 <br>
-                      <a href="https://github.com/rkdrn79/2024_SW_Centered_University_Digital_Competition_SKKUAI">[code]</a>
-                    </div>
-                  </div>
-                </div>
-                <!-- Placeholder for Selected Awards figure -->
-                <div id="selectedAwardFigure" style="margin-top: 12px;">
-                  <!-- <img src="images/awards/selected_awards_fig.png" style="width:100%;"> -->
-                </div>
+  <div class="content-pane active" id="awards-selected" data-toggle-content="awards">
+    {% assign selected_awards = site.data.awards.awards | where: "selected", "y" %}
+    {% for award in selected_awards %}
+      {% include award_card.html award=award %}
+    {% endfor %}
+  </div>
 
-                <!-- All Awards -->
-                <div id="allAwards" style="display: none; margin-top: 0px;">
-                  <div style="display:flex; gap:16px; margin-bottom:24px; align-items:flex-start;">
-                    <div>
-                      <span class="papertitle"> Best Research Award </span>
-                      Top-rated research selected by industry and government-funded institutes evaluators.<br>
-                      <em>SKKU IME Annual Research Review</em>, Nov 2025
-                    </div>
-                  </div>
-                  <div style="display:flex; gap:16px; margin-bottom:24px; align-items:flex-start;">
-                    <div>
-                      <span class="papertitle">Excellence Award (Korea Energy Agency)</span>
-                      Development of a power consumption forecasting AI model.<br>
-                      <em>Power Consumption Forecasting AI Competition, Sep 2025</em><br>
-                      <a href="https://github.com/rkdrn79/2025_Electricity_Consumption_Forecasting_AI_Competition_SKKUAI">[code]</a>
-                    </div>
-                  </div>
-                  <div style="display:flex; gap:16px; margin-bottom:24px; align-items:flex-start;">
-                    <div>
-                      <span class="papertitle">President’s Award, Institute for Information & Communications Technology Planning & Evaluation (IITP)</span>
-                      Developed AI models for paragraph-level classification to predict whether text is human-written or AI-generated, leveraging contextual clues within the same document for reliable detection of generative AI content. <br>
-                      <em>IITP</em>, Aug 2025<br>
-                      <a href="https://github.com/rkdrn79/2025_SW_Centered_University_Digital_Competition_SKKUAI">[code]</a>
-                    </div>
-                  </div>
-                  <div style="display:flex; gap:16px; margin-bottom:24px; align-items:flex-start;">
-                    <div>
-                      <span class="papertitle">Intelligent Multimedia Research Center Director’s Award</span>
-                      Developed prompts and retrieval-augmented generation strategies for fair and neutral responses based on biased context and user intent.<br>
-                      <em>Sungkyunkwan University</em>, Jun 2025
-                    </div>
-                  </div>
-                  <div style="display:flex; gap:16px; margin-bottom:24px; align-items:flex-start;">
-                    <div>
-                      <span class="papertitle">Minister of Employment and Labor Award</span>
-                      Developed an AI model to predict the likelihood of pregnancy success in infertile patients.<br>
-                      <em>LG AI Research</em>, Apr 2025
-                    </div>
-                  </div>
-                  <div style="display:flex; gap:16px; margin-bottom:24px; align-items:flex-start;">
-                    <div>
-                      <span class="papertitle">President’s List, High Student Success Performance</span>
-                      Selected as one of the Top 20 Students for Outstanding Achievement Across Sungkyunkwan Univ.<br>
-                      <em>Sungkyunkwan Univ</em>, Jan 2025
-                    </div>
-                  </div>
-                  <div style="display:flex; gap:16px; margin-bottom:24px; align-items:flex-start;">
-                    <div>
-                      <span class="papertitle">Korea Water Resources Corporation President Award</span>
-                      Development of an AI model that can accurately detect the abnormal timing and leakage section of the water supply network.<br>
-                      <em>K-water</em>, Dec 2024
-                    </div>
-                  </div>
-                  <div style="display:flex; gap:16px; margin-bottom:24px; align-items:flex-start;">
-                    <div>
-                      <span class="papertitle">Sungkyunkwan University brAIn Research Program Award</span>
-                      Conducted research on the image inpainting model, CoReaP: Collaborative Reconstruction with Assistive Priors.<br>
-                      <em>Sungkyunkwan Univ</em>, Feb 2025
-                    </div>
-                  </div>
-                  <div style="display:flex; gap:16px; margin-bottom:24px; align-items:flex-start;">
-                    <div>
-                      <span class="papertitle">Korea Agro-Fisheries Food Trade Corporation Award</span>
-                      Development of an AI model for agriculture price forecasting.<br>
-                      <em>Ministry of Agriculture, Food and Rural Affairs</em>, Nov 2024
-                    </div>
-                  </div>
-                  <div style="display:flex; gap:16px; margin-bottom:24px; align-items:flex-start;">
-                    <div>
-                      <span class="papertitle">Korea Computer Education President Award</span>
-                      Development of text-to-3D motion generation model and web production for rehabilitation exercise.<br>
-                      <em>The Journal of Korean Association of Computer Education</em>, Oct 2024
-                    </div>
-                  </div>
-                  <div style="display:flex; gap:16px; margin-bottom:24px; align-items:flex-start;">
-                    <div>
-                      <span class="papertitle">Hankuk University of Foreign Studies Presidential Award</span>
-                      Development of an AI model that classifies article categories from news title and text keywords.<br>
-                      <em>Hankuk University of Foreign Studies</em>, Oct 2024
-                    </div>
-                  </div>
-                  <div style="display:flex; gap:16px; margin-bottom:24px; align-items:flex-start;">
-                    <div>
-                      <span class="papertitle">SKKU Univ AI Director Award</span>
-                      Development of an AI model to detect illegal gambling advertisements on web pages.<br>
-                      <em>Sungkyunkwan Univ</em>, Sep 2024
-                    </div>
-                  </div>
-                  <div style="display:flex; gap:16px; margin-bottom:24px; align-items:flex-start;">
-                    <div>
-                      <span class="papertitle">National Institute of Korean Language Award</span>
-                      Development of an AI model to distinguish conversation context in Korean LLM.<br>
-                      <em>National Institute of the Korean Language</em>, Aug 2024<br>
-                      <a href="https://github.com/rkdrn79/2024_Korean_CCI">[code]</a>
-                    </div>
-                  </div>
-                  <div style="display:flex; gap:16px; margin-bottom:24px; align-items:flex-start;">
-                    <div>
-                      <span class="papertitle">Minister of Science and ICT Award</span>
-                      Development of an AI model to detect the fake voice of the generating AI.<br>
-                      <em>SW Centered University</em>, Aug 2024<br>
-                      <a href="https://github.com/rkdrn79/2024_SW_Centered_University_Digital_Competition_SKKUAI">[code]</a>
-                    </div>
-                  </div>
-                  <div style="display:flex; gap:16px; margin-bottom:24px; align-items:flex-start;">
-                    <div>
-                      <span class="papertitle">Dean’s List Award, High Scholastic Achievement</span>
-                      Top 1% for the fall semester 2023.<br>
-                      <em>Sungkyunkwan Univ</em>, Jul 2024
-                    </div>
-                  </div>
-                </div>
-                <script>
-                  function showAwards(view) {
-                    const selected = document.getElementById('selectedAwards');
-                    const all = document.getElementById('allAwards');
-                    const selectedLink = document.getElementById('selectedLink');
-                    const allLink = document.getElementById('allLink');
+  <div class="content-pane" id="awards-all" data-toggle-content="awards">
+    {% for award in site.data.awards.awards %}
+      {% include award_card.html award=award %}
+    {% endfor %}
+  </div>
+</div>
 
-                    if (view === 'selected') {
-                      selected.style.display = 'block';
-                      all.style.display = 'none';
-                      selectedLink.style.fontWeight = 'bold';
-                      selectedLink.style.color = '#0033B3';
-                      selectedLink.style.textDecoration = 'underline';
-                      allLink.style.fontWeight = 'normal';
-                      allLink.style.color = '#d0d0d0';
-                      allLink.style.textDecoration = 'none';
-                    } else {
-                      selected.style.display = 'none';
-                      all.style.display = 'block';
-                      allLink.style.fontWeight = 'bold';
-                      allLink.style.color = '#0033B3';
-                      allLink.style.textDecoration = 'underline';
-                      selectedLink.style.fontWeight = 'normal';
-                      selectedLink.style.color = '#d0d0d0';
-                      selectedLink.style.textDecoration = 'none';
-                    }
-                  }
+<!-- ========== SCHOLARSHIPS ========== -->
+<div class="docs-section" id="scholarships">
+  <h4>Scholarship</h4>
+  {% for scholarship in site.data.scholarships.scholarships %}
+    <div class="entry-card">
+      <h5 class="entry-title">{{ scholarship.title }}</h5>
+      <p>{{ scholarship.description }}</p>
+      <p class="entry-meta">{{ scholarship.organization }}, {{ scholarship.date }}</p>
+    </div>
+  {% endfor %}
+</div>
 
-                  // Set default state on page load
-                  window.onload = function () {
-                    showAwards('selected');
-                  };
-                </script>
-              </td>
-            </tr>
-          </tbody></table>
+<!-- ========== CV ========== -->
+<div class="docs-section" id="resume">
+  <h4>CV</h4>
+  <p>Full CV in <a href="{{ site.data.main_info.cv | prepend: site.baseurl }}" target="_blank">PDF</a>.</p>
+</div>
 
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-              <td style="padding:16px;width:100%;vertical-align:middle">
-                <h2 style="margin-bottom: 24px; font-weight: bold; font-size: 24px; font-family: 'Merriweather', serif;">Scholarship</h2>
-
-                <div style="display:flex; gap:16px; margin-bottom:24px; align-items:flex-start;">
-                  <div>
-                    <span class="papertitle">Presidential Science Scholarship</span>
-                    Selected as one of the Top 60 nationwide for fostering world-class scientists in engineering.<br>
-                    <em>President of the Republic of Korea</em>, Feb 2024
-                  </div>
-                </div>
-              </td>
-            </tr>
-          </tbody></table>
-
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-              <td style="padding:0px">
-                <br>
-                <p style="text-align:right;font-size:small;">
-                  Code source is from <a href="https://github.com/jonbarron/jonbarron_website">Jon Barron</a>.
-                </p>
-              </td>
-            </tr>
-          </tbody></table>
-        </td>
-      </tr>
-    </tbody></table>
-  </body>
-</html>
+<!-- Terminal-style BibTeX Toast -->
+<div id="bibtex-toast" class="bibtex-toast">
+  <div class="toast-header">
+    <span class="toast-dots">
+      <span></span><span></span><span></span>
+    </span>
+    <span class="toast-title">bibtex</span>
+  </div>
+  <pre id="bibtex-content" class="toast-content"></pre>
+  <div class="toast-actions">
+    <button id="copy-bibtex" class="toast-btn">
+      <i class="fa-solid fa-copy"></i> Copy
+    </button>
+    <button id="close-bibtex" class="toast-btn secondary">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </div>
+</div>

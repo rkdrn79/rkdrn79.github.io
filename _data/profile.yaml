@@ -1,0 +1,5 @@
+bio:
+  - "I am an M.S./Ph.D. student at the <a href=\"https://viplab.snu.ac.kr/index.html\">VIP Lab</a>, <a href=\"https://www.snu.ac.kr/\">Seoul National University</a>, advised by <a href=\"http://www.joonseok.net/home.html\">Prof. Joonseok Lee</a>."
+  - "Previously, I was a research intern at the <a href=\"https://hugelab.org/\">Humanoid Generalization Lab</a>, <a href=\"https://gsai.kaist.ac.kr/\">Graduate School of AI at KAIST</a>, advised by <a href=\"https://beomjoonkim.github.io/\">Prof. Beomjoon Kim</a>, and at the <a href=\"https://sites.google.com/view/yskim525/home?authuser=0\">Computer System Intelligence Lab</a>, <a href=\"https://www.skku.edu/eng/index.do\">Sungkyunkwan University</a>, advised by Prof. Yusung Kim."
+research:
+  - "I am interested in video understanding, studying how temporal dynamics and high-level semantics can be effectively modeled to enable downstream tasks such as video summarization and video retrieval."

@@ -1,0 +1,27 @@
+papers:
+  - title: "TripleSumm: Adaptive Triple-Modality Fusion for Video Summarization"
+    authors: "Sumin Kim*, Hyemin Jung*, <b>Mingu Kang*</b>, Yejin Kim, Yoori Oh, Joonseok Lee"
+    venue: "International Conference on Learning Representations (ICLR), 2026."
+    selected: y
+    type: conference
+    year: 2026
+    keywords: ["video summarization", "multimodal fusion", "video understanding"]
+
+  - title: "DisCoRD: Discrete Tokens to Continuous Motion via Rectified Flow Decoding"
+    authors: "Jungbin Cho*, Junwan Kim*, Jisoo Kim, Minseo Kim, <b>Mingu Kang</b>, Seuneun Hong, Tae-Hyun Oh, Youngjae Yu"
+    venue: "International Conference on Computer Vision (ICCV), 2025. Highlight."
+    paper_pdf: "https://arxiv.org/abs/2411.19527"
+    webpage: "https://whwjdqls.github.io/discord-motion/"
+    selected: y
+    type: conference
+    year: 2025
+    keywords: ["motion generation", "rectified flow", "video", "discrete tokens"]
+
+  - title: "Examination of Efficient Strategies on Knowledge Distillation Methods in Continual Learning"
+    authors: "Euiseog Jeong*, <b>Mingu Kang*</b>, MyeongSeop Kim*, Eunil Park"
+    venue: "Korean Institute of Information Scientists and Engineers (KIISE), 2024."
+    paper_pdf: "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12042097"
+    selected: y
+    type: conference
+    year: 2024
+    keywords: ["knowledge distillation", "continual learning", "efficient learning"]
