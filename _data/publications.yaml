@@ -3,7 +3,7 @@ papers:
     authors: "<b>Mingu Kang</b>, Sumin Kim, Hyunjin Lee, Sungmin Yang, Yoori Oh, Joonseok Lee"
     venue: "International Conference on Learning Representations (ICLR), 2026."
     selected: y
-    type: conference
+    type: preprint
     year: 2026
     keywords: ["video summarization", "video mllm", "video understanding"]
 
