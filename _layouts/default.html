@@ -50,6 +50,10 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href={{ "/libs/external/timeline.css" | prepend: site.baseurl }}>
 
+  <!-- D3.js for Research Topic Map
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+
   <!-- Scripts
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <!--<link rel="stylesheet" href={{ "/libs/external/github-prettify-theme.css" | prepend: site.baseurl }}>-->
@@ -109,6 +113,7 @@
         <ul class="navbar-list">
           <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#bio" | prepend: site.baseurl }}>Bio</a></li>
           <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#publications" | prepend: site.baseurl }}>Publications</a></li>
+          <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#research-topic" | prepend: site.baseurl }}>Topics</a></li>
           <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#experience" | prepend: site.baseurl }}>Experience</a></li>
           <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#awards" | prepend: site.baseurl }}>Awards</a></li>
           <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#scholarships" | prepend: site.baseurl }}>Scholarship</a></li>
@@ -125,7 +130,7 @@
           {{ site.data.main_info.name }}
         </div>
         <div class="four columns">
-          based on <a href="https://web.media.mit.edu/~msaveski/">Martin Saveski</a>'s template
+          {{ site.data.main_info.email }}
         </div>
         <!-- <div class="four columns"> -->
           <!-- {{ site.data.main_info.email }} -->

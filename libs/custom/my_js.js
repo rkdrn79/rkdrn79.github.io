@@ -27,9 +27,6 @@ $(document).ready(function() {
     initContentToggles();
     initBibtexToast();
     initKeywordChips();
-    initKaTeX();
-    initPoemGallery();
-    initBlogFilters();
   }
 
   // ================ NEURAL MAP (D3.js) ================
@@ -471,111 +468,6 @@ $(document).ready(function() {
     $(document).on('keydown', function(e) {
       if (e.key === 'Escape') {
         $toast.removeClass('show');
-      }
-    });
-  }
-
-  // ================ KATEX ================
-  function initKaTeX() {
-    document.addEventListener('DOMContentLoaded', function() {
-      if (typeof renderMathInElement !== 'undefined') {
-        renderMathInElement(document.body, {
-          delimiters: [
-            { left: '$$', right: '$$', display: true },
-            { left: '$', right: '$', display: false },
-            { left: '\\(', right: '\\)', display: false },
-            { left: '\\[', right: '\\]', display: true }
-          ],
-          throwOnError: false
-        });
-      }
-    });
-  }
-
-  // ================ POEM GALLERY ================
-  function initPoemGallery() {
-    var $tiles = $('.gallery .poem-album');
-    var $modal = $('#poem-modal');
-    var $titleEl = $('#poem-title');
-    var $authorEl = $('#poem-author');
-    var $bodyEl = $('#poem-body');
-    var $closeBtn = $modal.find('.close');
-
-    function randomPastel() {
-      var h = Math.floor(Math.random() * 360);
-      var s = 60 + Math.floor(Math.random() * 15);
-      var l = 85 + Math.floor(Math.random() * 8);
-      return 'hsl(' + h + ' ' + s + '% ' + l + '%)';
-    }
-
-    $tiles.each(function() {
-      var color = randomPastel();
-      var $cover = $(this).find('.art');
-      if ($cover.length) {
-        $cover.css('background', color);
-      } else {
-        $(this).css('background', color);
-      }
-    });
-
-    function htmlDataToPlainText(escapedHtml) {
-      if (!escapedHtml) return '';
-      var decoded = $('<textarea/>').html(escapedHtml).text();
-      decoded = decoded
-        .replace(/<\s*br\s*\/?>/gi, '\n')
-        .replace(/<\/\s*p\s*>/gi, '\n\n')
-        .replace(/<\/\s*h[1-6]\s*>/gi, '\n\n')
-        .replace(/<\/\s*li\s*>/gi, '\n')
-        .replace(/<\/\s*div\s*>/gi, '\n');
-      decoded = decoded.replace(/<[^>]+>/g, '');
-      decoded = decoded.replace(/\n{3,}/g, '\n\n').trim();
-      return decoded;
-    }
-
-    $tiles.on('click', function() {
-      $titleEl.text($(this).data('title'));
-      $authorEl.text($(this).data('author'));
-      var content = $(this).data('content');
-      var isEscape = $(this).hasClass('poem-content_escape');
-      if (!isEscape) {
-        content = '<pre>' + htmlDataToPlainText(content) + '</pre>';
-      }
-      $bodyEl.html(content);
-      $modal.css('display', 'flex');
-    });
-
-    $closeBtn.on('click', function() { $modal.hide(); });
-    $modal.on('click', function(e) {
-      if (e.target === this) $modal.hide();
-    });
-    $(document).on('keydown', function(e) {
-      if (e.key === 'Escape' && $modal.is(':visible')) {
-        $modal.hide();
-      }
-    });
-  }
-
-  // ================ BLOG FILTERS ================
-  function initBlogFilters() {
-    var $tagFilters = $('.tag-filter');
-    var $blogPosts = $('.blog-post');
-
-    $tagFilters.on('click', function() {
-      var selectedTag = $(this).data('tag');
-      $tagFilters.removeClass('active');
-      $(this).addClass('active');
-
-      if (selectedTag === 'all') {
-        $blogPosts.show();
-      } else {
-        $blogPosts.each(function() {
-          var postTags = $(this).data('tags');
-          if (postTags && postTags.split(',').indexOf(selectedTag) !== -1) {
-            $(this).show();
-          } else {
-            $(this).hide();
-          }
-        });
       }
     });
   }

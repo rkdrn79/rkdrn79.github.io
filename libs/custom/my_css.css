@@ -1,6 +1,5 @@
 /* ===============================================
-   CREATIVE ACADEMIC PORTFOLIO
-   A modern, animated, interactive design
+   MINGU KANG ACADEMIC WEBSITE
    =============================================== */
 
 :root {
@@ -572,7 +571,7 @@ h4 { letter-spacing: .1rem; }
   background: var(--bg-light);
 }
 
-/* ================ OLD ELEMENTS (keep compatible) ================ */
+/* ================ SHARED ELEMENTS ================ */
 .paper { margin-bottom: 20px; }
 .paper .title { }
 .paper p { margin-bottom: 2px; }
@@ -639,117 +638,7 @@ h4 { letter-spacing: .1rem; }
   .has-docked-nav .navbar > .container { width: 80%; }
 }
 
-/* Project styling */
-.project-container { margin-bottom: 30px; }
-.project-image-container {
-  border: 1px solid rgba(0,0,0,0.2);
-  padding: 3px;
-  transition: 0.3s;
-}
-.project-image-container:hover { transition: 0.3s; }
-.project-image-container:hover img { opacity: 0.4; }
-.project-caption { padding: 3px; }
-
 .figure { display: flex; justify-content: center; align-items: center; }
-.thumbnail { max-height: 150px; max-width: 100%; height: auto; width: auto; }
-#poem-modal { z-index: 4; }
-
-/* Blog styles */
-.tag-filters { margin-bottom: 2rem; }
-.tag-filter {
-  display: inline-block;
-  padding: 5px 15px;
-  margin: 3px 5px 3px 0;
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .1rem;
-  border: 1px solid #bbb;
-  border-radius: 3px;
-  background: #fff;
-  color: #555;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-.tag-filter:hover { border-color: #33C3F0; color: #33C3F0; }
-.tag-filter.active { background: #33C3F0; border-color: #33C3F0; color: #fff; }
-.tag {
-  display: inline-block;
-  padding: 2px 8px;
-  margin-right: 5px;
-  font-size: 11px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .05rem;
-  border-radius: 3px;
-  background: #f0f0f0;
-  color: #666;
-}
-.post-meta { color: #888; margin-bottom: 1rem; }
-.post-meta a { color: #33C3F0; text-decoration: none; }
-.post-meta a:hover { text-decoration: underline; }
-.post-content { margin-top: 2rem; line-height: 1.8; }
-.post-content h1, .post-content h2, .post-content h3 { margin-top: 2rem; }
-.post-content pre {
-  background: #f5f5f5;
-  padding: 1rem;
-  border-radius: 4px;
-  overflow-x: auto;
-}
-.post-content code {
-  background: #f5f5f5;
-  padding: 2px 6px;
-  border-radius: 3px;
-  font-size: 0.9em;
-}
-.post-content pre code { padding: 0; background: none; }
-.post-tags { margin: 5px 0; }
-.blog-post { padding-bottom: 20px; border-bottom: 1px solid #eee; }
-.blog-post:last-child { border-bottom: none; }
-
-/* ================ Digital Garden ================ */
-.garden-layout {
-  display: grid;
-  grid-template-columns: 1fr 280px;
-  gap: 40px;
-}
-@media (max-width: 900px) {
-  .garden-layout { grid-template-columns: 1fr; }
-  .garden-sidebar { order: -1; }
-}
-.garden-content { min-width: 0; }
-.garden-sidebar { position: sticky; top: 100px; height: fit-content; }
-.backlinks-section {
-  background: var(--bg-light);
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  padding: 16px;
-}
-.backlinks-section h5 {
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--text-secondary);
-  margin-bottom: 12px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid var(--border);
-}
-.backlink-item {
-  display: block;
-  padding: 8px 0;
-  border-bottom: 1px solid var(--border);
-  color: var(--text-primary);
-  text-decoration: none;
-  font-size: 13px;
-  transition: color 0.2s;
-}
-.backlink-item:last-child { border-bottom: none; }
-.backlink-item:hover { color: var(--accent); }
-.backlink-context { font-size: 11px; color: var(--text-secondary); margin-top: 3px; }
-
-/* KaTeX */
-.katex-display { overflow-x: auto; overflow-y: hidden; padding: 10px 0; }
-.post-content .katex { font-size: 1.1em; }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {

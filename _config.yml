@@ -6,5 +6,5 @@ url: "https://rkdrn79.github.io"
 title: "Mingu Kang"
 
 exclude:
-  - JiwanChung.github.io
+  - "*.github.io"
   - _site
