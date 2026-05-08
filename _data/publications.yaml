@@ -1,11 +1,35 @@
 papers:
+  - title: "From Matching to Reasoning: Query-Aware Long Video Summarization"
+    authors: "<b>Mingu Kang</b>, Sumin Kim, Hyunjin Lee, Sungmin Yang, Yoori Oh, Joonseok Lee"
+    venue: "International Conference on Learning Representations (ICLR), 2026."
+    selected: y
+    type: conference
+    year: 2026
+    keywords: ["video understanding", "video summarization", "multimodal reasoning"]
+
+  - title: "DRUM: Dense Reliability Utilization Module for Robust Autonomous Driving Perception"
+    authors: "Junhyung Kim, <b>Mingu Kang</b>, YunSeok Choi"
+    venue: "Preprint, 2026."
+    selected: n
+    type: preprint
+    year: 2026
+    keywords: ["autonomous driving", "autonomous perception", "multimodal learning"]
+
+  - title: "Do Not Stop at Frame Scoring: Enabling End-to-end Training for Video Summarization"
+    authors: "Sumin Kim*, <b>Mingu Kang*</b>, Minjun Kim, Sungmin Yang, U Kang, Jaegul Choo, Yoori Oh, Joonseok Lee"
+    venue: "Preprint, 2026."
+    selected: y
+    type: preprint
+    year: 2026
+    keywords: ["video understanding", "video summarization", "end-to-end learning"]
+
   - title: "TripleSumm: Adaptive Triple-Modality Fusion for Video Summarization"
     authors: "Sumin Kim*, Hyemin Jung*, <b>Mingu Kang*</b>, Yejin Kim, Yoori Oh, Joonseok Lee"
     venue: "International Conference on Learning Representations (ICLR), 2026."
     selected: y
     type: conference
     year: 2026
-    keywords: ["video summarization", "multimodal fusion", "video understanding"]
+    keywords: ["video understanding", "video summarization", "multimodal learning"]
 
   - title: "DisCoRD: Continuous Motion via Rectified Flow Decoding"
     authors: "Jungbin Cho*, Junwan Kim*, Jisoo Kim, Minseo Kim, <b>Mingu Kang</b>, Seuneun Hong, Tae-Hyun Oh, Youngjae Yu"
@@ -15,7 +39,7 @@ papers:
     selected: y
     type: conference
     year: 2025
-    keywords: ["motion generation", "rectified flow", "video"]
+    keywords: ["motion generation", "embodied AI", "generative modeling"]
 
   - title: "Examination of Efficient Strategies on Knowledge Distillation Methods in Continual Learning"
     authors: "Euiseog Jeong*, <b>Mingu Kang*</b>, MyeongSeop Kim*, Eunil Park"
@@ -24,4 +48,4 @@ papers:
     selected: n
     type: conference
     year: 2024
-    keywords: ["knowledge distillation", "continual learning", "efficient learning"]
+    keywords: ["continual learning", "knowledge distillation", "efficient learning"]

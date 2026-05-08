@@ -113,11 +113,11 @@ $(document).ready(function() {
       },
       { // 2: Agents / Robotics (Amber)
         id: 'agents', color: '#f59e0b',
-        keywords: ['agents', 'robotics', 'embodied', 'navigation', 'exploration', 'decision', 'rl', 'egocentric']
+        keywords: ['agents', 'robotics', 'embodied', 'autonomous', 'driving', 'perception', 'navigation', 'exploration', 'decision', 'rl', 'egocentric']
       },
       { // 3: Video / Audio (Rose)
         id: 'video', color: '#f43f5e',
-        keywords: ['video', 'audio', 'summarization', 'nonverbal', 'storytelling']
+        keywords: ['video', 'audio', 'summarization', 'motion', 'generative', 'nonverbal', 'storytelling']
       },
       { // 4: NLP / LLM (Emerald)
         id: 'nlp', color: '#10b981',
