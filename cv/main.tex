@@ -1,0 +1,27 @@
+\documentclass[10pt, letterpaper]{article}
+
+% Include the preamble with all packages and settings
+\input{preamble}
+
+\begin{document}
+    \newcommand{\AND}{\unskip
+        \cleaders\copy\ANDbox\hskip\wd\ANDbox
+        \ignorespaces
+    }
+    \newsavebox\ANDbox
+    \sbox\ANDbox{}
+
+    \placelastupdatedtext
+
+    % Include header section
+    \input{sections/header}
+
+    % Include all sections
+    \input{sections/welcome}
+    \input{sections/education}
+    \input{sections/publications}
+    \input{sections/experience}
+    \input{sections/honors}
+    \input{sections/scholarship}
+
+\end{document}

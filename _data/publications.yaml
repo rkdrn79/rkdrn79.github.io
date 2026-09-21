@@ -42,12 +42,3 @@ papers:
     type: conference
     year: 2025
     keywords: ["motion generation", "video", "robotics"]
-
-  - title: "Examination of Efficient Strategies on Knowledge Distillation Methods in Continual Learning"
-    authors: "Euiseog Jeong*, <b>Mingu Kang*</b>, MyeongSeop Kim*, Eunil Park"
-    venue: "Korean Institute of Information Scientists and Engineers (KIISE), 2024."
-    paper_pdf: "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12042097"
-    selected: n
-    type: conference
-    year: 2024
-    keywords: ["knowledge distillation", "continual learning", "efficient learning"]

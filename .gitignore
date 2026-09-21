@@ -14,3 +14,7 @@ libs/external/academicons-1.8.6/.gitattributes
 libs/external/academicons-1.8.6/README.md
 libs/external/academicons-1.8.6/bower.json
 libs/external/academicons-1.8.6/css/academicons.css
+cv/main.aux
+cv/main.log
+cv/main.pdf
+cv/old/
