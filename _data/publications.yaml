@@ -1,6 +1,14 @@
 papers:
+  - title: "Anisotropic Representations Improve Planning in JEPA World Models"
+    authors: "<b><a href=\"https://openreview.net/profile?id=~Mingu_Kang4\" target=\"_blank\">Mingu Kang</a></b>, <a href=\"https://openreview.net/profile?id=~Yoori_Oh1\" target=\"_blank\">Yoori Oh</a><sup>&dagger;</sup>, <a href=\"https://openreview.net/profile?id=~Soo_Kyung_Kim1\" target=\"_blank\">Soo Kyung Kim</a><sup>&dagger;</sup>, <a href=\"https://openreview.net/profile?id=~Joonseok_Lee1\" target=\"_blank\">Joonseok Lee</a><sup>&dagger;</sup>"
+    venue: "Preprint, 2026."
+    selected: y
+    type: preprint
+    year: 2026
+    keywords: ["world models", "robot planning", "representation learning"]
+
   - title: "From Matching to Reasoning: Query-Aware Long Video Summarization"
-    authors: "<b>Mingu Kang</b>, Sumin Kim, Hyunjin Lee, Sungmin Yang, Yoori Oh, Joonseok Lee"
+    authors: "<b>Mingu Kang</b>, Sumin Kim, Hyunjin Lee, Sungmin Yang, Yoori Oh<sup>&dagger;</sup>, Joonseok Lee<sup>&dagger;</sup>"
     venue: "Preprint, 2026."
     selected: y
     type: preprint
@@ -16,7 +24,7 @@ papers:
     keywords: ["autonomous driving", "multimodal fusion", "robotics"]
 
   - title: "Do Not Stop at Frame Scoring: Enabling End-to-end Training for Video Summarization"
-    authors: "Sumin Kim*, <b>Mingu Kang*</b>, Minjun Kim, Sungmin Yang, U Kang, Jaegul Choo, Yoori Oh, Joonseok Lee"
+    authors: "Sumin Kim<sup>*</sup>, <b>Mingu Kang<sup>*</sup></b>, Minjun Kim, Sungmin Yang, U Kang, Jaegul Choo<sup>&dagger;</sup>, Yoori Oh<sup>&dagger;</sup>, Joonseok Lee<sup>&dagger;</sup>"
     venue: "Preprint, 2026."
     selected: y
     type: preprint
@@ -24,7 +32,7 @@ papers:
     keywords: ["video summarization", "end-to-end learning", "video understanding"]
 
   - title: "TripleSumm: Adaptive Triple-Modality Fusion for Video Summarization"
-    authors: "Sumin Kim*, Hyemin Jung*, <b>Mingu Kang*</b>, Yejin Kim, Yoori Oh, Joonseok Lee"
+    authors: "Sumin Kim<sup>*</sup>, Hyemin Jung<sup>*</sup>, <b>Mingu Kang<sup>*</sup></b>, Yejin Kim, Yoori Oh<sup>&dagger;</sup>, Joonseok Lee<sup>&dagger;</sup>"
     venue: "International Conference on Learning Representations (ICLR), 2026."
     paper_pdf: "https://arxiv.org/abs/2411.19527"
     webpage: "https://smkim37.github.io/TripleSumm-page/"
@@ -34,7 +42,7 @@ papers:
     keywords: ["video summarization", "multimodal fusion", "video understanding"]
 
   - title: "DisCoRD: Continuous Motion via Rectified Flow Decoding"
-    authors: "Jungbin Cho*, Junwan Kim*, Jisoo Kim, Minseo Kim, <b>Mingu Kang</b>, Seuneun Hong, Tae-Hyun Oh, Youngjae Yu"
+    authors: "Jungbin Cho<sup>*</sup>, Junwan Kim<sup>*</sup>, Jisoo Kim, Minseo Kim, <b>Mingu Kang</b>, Seuneun Hong<sup>&dagger;</sup>, Tae-Hyun Oh<sup>&dagger;</sup>, Youngjae Yu<sup>&dagger;</sup>"
     venue: "International Conference on Computer Vision (ICCV), 2025. Highlight."
     paper_pdf: "https://arxiv.org/abs/2411.19527"
     webpage: "https://whwjdqls.github.io/discord-motion/"

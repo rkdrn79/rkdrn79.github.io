@@ -119,6 +119,17 @@
     \endonecolentry
 } % new environment for two column entries
 
+\newenvironment{publicationentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 1.6 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+} % compact date column for publication entries
+
 \newenvironment{header}{
     \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.3}
 }{

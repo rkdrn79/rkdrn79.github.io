@@ -1,4 +1,18 @@
 awards:
+  - title: "LG AI Research President's Award (2nd Place)"
+    description: "Developed an AI model to predict pitch-control success probabilities."
+    organization: "LG Aimers 9th Offline Hackathon"
+    date: "Sep 2026"
+    webpage: "https://dacon.io/competitions/official/236767/overview/description"
+    selected: y
+
+  - title: "Presidents' Awards, Korea East-West Power and GS E&R"
+    description: "Developed an AI model for wind power generation forecasting."
+    organization: "3rd Wind Power Generation Forecasting AI Competition (BARAM 2026)"
+    date: "Sep 2026"
+    webpage: "https://dacon.io/competitions/official/236727/overview/description"
+    selected: y
+
   - title: "Best Research Award"
     description: "Top-rated research selected by industry and government-funded institute evaluators."
     organization: "SKKU IME Annual Research Review"

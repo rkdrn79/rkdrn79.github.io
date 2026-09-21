@@ -3,11 +3,18 @@
   <h5 class="entry-title">{{ award.title }}</h5>
   <p>{{ award.description }}</p>
   <p class="entry-meta">{{ award.organization }}, {{ award.date }}</p>
-  {% if award.code %}
+  {% if award.code or award.webpage %}
     <div class="paper-actions">
-      <a class="action-btn" href="{{ award.code }}" target="_blank" title="Code">
-        <i class="fa-brands fa-github"></i>
-      </a>
+      {% if award.code %}
+        <a class="action-btn" href="{{ award.code }}" target="_blank" title="Code">
+          <i class="fa-brands fa-github"></i>
+        </a>
+      {% endif %}
+      {% if award.webpage %}
+        <a class="action-btn" href="{{ award.webpage }}" target="_blank" title="Competition">
+          <i class="fa-solid fa-trophy"></i>
+        </a>
+      {% endif %}
     </div>
   {% endif %}
 </div>
