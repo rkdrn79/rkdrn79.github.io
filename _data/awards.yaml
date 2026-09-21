@@ -1,7 +1,7 @@
 awards:
   - title: "LG AI Research President's Award"
     description: "Developed an AI model to predict pitch-control success probabilities."
-    organization: "LG Aimers 9th Offline Hackathon"
+    organization: "LG AI Research"
     date: "Sep 2026"
     selected: y
 
