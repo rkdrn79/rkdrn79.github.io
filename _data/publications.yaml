@@ -1,6 +1,6 @@
 papers:
   - title: "Anisotropic Representations Improve Planning in JEPA World Models"
-    authors: "<b><a href=\"https://openreview.net/profile?id=~Mingu_Kang4\" target=\"_blank\">Mingu Kang</a></b>, <a href=\"https://openreview.net/profile?id=~Yoori_Oh1\" target=\"_blank\">Yoori Oh</a><sup>&dagger;</sup>, <a href=\"https://openreview.net/profile?id=~Soo_Kyung_Kim1\" target=\"_blank\">Soo Kyung Kim</a><sup>&dagger;</sup>, <a href=\"https://openreview.net/profile?id=~Joonseok_Lee1\" target=\"_blank\">Joonseok Lee</a><sup>&dagger;</sup>"
+    authors: "<b>Mingu Kang</b>, Yoori Oh<sup>&dagger;</sup>, Soo Kyung Kim<sup>&dagger;</sup>, Joonseok Lee<sup>&dagger;</sup>"
     venue: "Preprint, 2026."
     selected: y
     type: preprint
