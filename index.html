@@ -83,13 +83,15 @@ title: Home
 </div>
 
 <!-- ========== RESEARCH TOPIC ========== -->
-<div class="docs-section" id="research-topic">
-  <h4>Research Topic</h4>
-  <p class="section-subtitle">Click a topic to filter publications above.</p>
-  <div id="neural-map-container">
-    <div id="neural-tooltip"></div>
+{% if site.data.profile.show_research_topics %}
+  <div class="docs-section" id="research-topic">
+    <h4>Research Topic</h4>
+    <p class="section-subtitle">Click a topic to filter publications above.</p>
+    <div id="neural-map-container">
+      <div id="neural-tooltip"></div>
+    </div>
   </div>
-</div>
+{% endif %}
 
 <!-- ========== PATENTS ========== -->
 <div class="docs-section" id="patents">

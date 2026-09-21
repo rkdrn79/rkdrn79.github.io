@@ -1,3 +1,5 @@
+show_research_topics: false
+
 bio:
   - "I am an M.S./Ph.D. student at the <a href=\"https://viplab.snu.ac.kr/viplab/index.html\">VIP Lab</a>, <a href=\"https://www.snu.ac.kr/\">Seoul National University</a>, advised by <a href=\"http://www.joonseok.net/home.html\">Prof. Joonseok Lee</a>."
   - "My research centers on video understanding and world models. I study multimodal representations that capture temporal dynamics, high-level semantics, and physical interactions, with the goal of enabling prediction, planning, and decision-making. My interests include long-form video understanding, video summarization and retrieval, motion understanding, and representation learning for embodied agents."
