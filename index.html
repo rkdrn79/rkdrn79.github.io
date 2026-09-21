@@ -91,6 +91,18 @@ title: Home
   </div>
 </div>
 
+<!-- ========== PATENTS ========== -->
+<div class="docs-section" id="patents">
+  <h4>Patents</h4>
+  {% for patent in site.data.patents.patents %}
+    <div class="entry-card">
+      <h5 class="entry-title">{{ patent.title }}</h5>
+      <p>{{ patent.status }}</p>
+      <p class="entry-meta">Inventors: {{ patent.inventors }}</p>
+    </div>
+  {% endfor %}
+</div>
+
 <!-- ========== EXPERIENCE ========== -->
 <div class="docs-section" id="experience">
   <h4>Research Experience</h4>
@@ -130,6 +142,18 @@ title: Home
   {% endfor %}
 </div>
 
+<!-- ========== PROJECTS ========== -->
+<div class="docs-section" id="projects">
+  <h4>Projects</h4>
+  {% for project in site.data.projects.projects %}
+    <div class="entry-card">
+      <h5 class="entry-title">{{ project.title }}</h5>
+      <p>{{ project.description }}</p>
+      <p class="entry-meta">{{ project.program }}, {{ project.time }}</p>
+    </div>
+  {% endfor %}
+</div>
+
 <!-- ========== AWARDS ========== -->
 <div class="docs-section" id="awards">
   <h4>Awards</h4>
@@ -156,12 +180,23 @@ title: Home
 
 <!-- ========== SCHOLARSHIPS ========== -->
 <div class="docs-section" id="scholarships">
-  <h4>Scholarship</h4>
+  <h4>Fellowships &amp; Scholarships</h4>
   {% for scholarship in site.data.scholarships.scholarships %}
     <div class="entry-card">
       <h5 class="entry-title">{{ scholarship.title }}</h5>
       <p>{{ scholarship.description }}</p>
       <p class="entry-meta">{{ scholarship.organization }}, {{ scholarship.date }}</p>
+    </div>
+  {% endfor %}
+</div>
+
+<!-- ========== ACADEMIC SERVICES ========== -->
+<div class="docs-section" id="academic-services">
+  <h4>Academic Services</h4>
+  {% for service in site.data.academic_services.services %}
+    <div class="entry-card">
+      <h5 class="entry-title">{{ service.role }}</h5>
+      <p class="entry-meta">{{ service.organization }}, {{ service.date }}</p>
     </div>
   {% endfor %}
 </div>

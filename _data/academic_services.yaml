@@ -1,0 +1,4 @@
+services:
+  - role: "Reviewer"
+    organization: "Conference on Neural Information Processing Systems (NeurIPS)"
+    date: "2026"

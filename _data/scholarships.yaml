@@ -1,4 +1,14 @@
 scholarships:
+  - title: "Master's Excellence Scholarship (Science and Engineering)"
+    description: "Selected as a scholarship recipient for outstanding master's students in science and engineering."
+    organization: "Korea Student Aid Foundation"
+    date: "Mar 2026"
+
+  - title: "NRF Graduate Research Encouragement Grant"
+    description: "Selected for graduate research funding in video summarization."
+    organization: "National Research Foundation of Korea"
+    date: "Sep 2026"
+
   - title: "Presidential Science Scholarship"
     description: "Selected as one of the Top 60 nationwide for fostering world-class scientists in engineering."
     organization: "President of the Republic of Korea"
