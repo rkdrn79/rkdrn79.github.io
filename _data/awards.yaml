@@ -30,7 +30,7 @@ awards:
     organization: "IITP"
     date: "Aug 2025"
     code: "https://github.com/rkdrn79/2025_SW_Centered_University_Digital_Competition_SKKUAI"
-    selected: n
+    selected: y
 
   - title: "Intelligent Multimedia Research Center Director's Award"
     description: "Developed prompts and retrieval-augmented generation strategies for fair and neutral responses based on biased context and user intent."
