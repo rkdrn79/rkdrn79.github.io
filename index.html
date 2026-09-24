@@ -70,13 +70,27 @@ title: Home
     <div class="tab-pane active" id="papers-selected">
       {% assign selected_papers = site.data.publications.papers | where: "selected", "y" %}
       {% for paper in selected_papers %}
-        {% include paper_card.html paper=paper %}
+        {% if paper.type == "preprint" %}
+          {% include paper_card.html paper=paper %}
+        {% endif %}
+      {% endfor %}
+      {% for paper in selected_papers %}
+        {% unless paper.type == "preprint" %}
+          {% include paper_card.html paper=paper %}
+        {% endunless %}
       {% endfor %}
     </div>
 
     <div class="tab-pane" id="papers-all">
       {% for paper in site.data.publications.papers %}
-        {% include paper_card.html paper=paper %}
+        {% if paper.type == "preprint" %}
+          {% include paper_card.html paper=paper %}
+        {% endif %}
+      {% endfor %}
+      {% for paper in site.data.publications.papers %}
+        {% unless paper.type == "preprint" %}
+          {% include paper_card.html paper=paper %}
+        {% endunless %}
       {% endfor %}
     </div>
   </div>

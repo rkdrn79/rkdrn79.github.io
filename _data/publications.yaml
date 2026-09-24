@@ -7,14 +7,6 @@ papers:
     year: 2026
     keywords: ["world models", "robot planning", "representation learning"]
 
-  - title: "From Matching to Reasoning: Query-Aware Long Video Summarization"
-    authors: "<b>Mingu Kang</b>, Sumin Kim, Hyunjin Lee, Sungmin Yang, Yoori Oh<sup>&dagger;</sup>, Joonseok Lee<sup>&dagger;</sup>"
-    venue: "Conference on Neural Information Processing Systems (NeurIPS), 2026."
-    selected: y
-    type: conference
-    year: 2026
-    keywords: ["video summarization", "video mllm", "video understanding"]
-
   - title: "DRUM: Dense Reliability Utilization Module for Robust Autonomous Driving Perception"
     authors: "Junhyung Kim, <b>Mingu Kang</b>, YunSeok Choi"
     venue: "Preprint, 2026."
@@ -30,6 +22,14 @@ papers:
     type: preprint
     year: 2026
     keywords: ["video summarization", "end-to-end learning", "video understanding"]
+
+  - title: "From Matching to Reasoning: Query-Aware Long Video Summarization"
+    authors: "<b>Mingu Kang</b>, Sumin Kim, Hyunjin Lee, Sungmin Yang, Yoori Oh<sup>&dagger;</sup>, Joonseok Lee<sup>&dagger;</sup>"
+    venue: "Conference on Neural Information Processing Systems (NeurIPS), 2026."
+    selected: y
+    type: conference
+    year: 2026
+    keywords: ["video summarization", "video mllm", "video understanding"]
 
   - title: "TripleSumm: Adaptive Triple-Modality Fusion for Video Summarization"
     authors: "Sumin Kim<sup>*</sup>, Hyemin Jung<sup>*</sup>, <b>Mingu Kang<sup>*</sup></b>, Yejin Kim, Yoori Oh<sup>&dagger;</sup>, Joonseok Lee<sup>&dagger;</sup>"
