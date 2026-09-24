@@ -9,9 +9,9 @@ papers:
 
   - title: "From Matching to Reasoning: Query-Aware Long Video Summarization"
     authors: "<b>Mingu Kang</b>, Sumin Kim, Hyunjin Lee, Sungmin Yang, Yoori Oh<sup>&dagger;</sup>, Joonseok Lee<sup>&dagger;</sup>"
-    venue: "Preprint, 2026."
+    venue: "Conference on Neural Information Processing Systems (NeurIPS), 2026."
     selected: y
-    type: preprint
+    type: conference
     year: 2026
     keywords: ["video summarization", "video mllm", "video understanding"]
 
