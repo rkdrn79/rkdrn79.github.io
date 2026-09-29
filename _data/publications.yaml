@@ -2,6 +2,8 @@ papers:
   - title: "Anisotropic Representations Improve Planning in JEPA World Models"
     authors: "<b>Mingu Kang</b>, Yoori Oh<sup>&dagger;</sup>, Soo Kyung Kim<sup>&dagger;</sup>, Joonseok Lee<sup>&dagger;</sup>"
     venue: "Preprint, 2026."
+    paper_pdf: "https://rkdrn79.github.io/AnisoWM-page/static/AnisoWM_preprint.pdf"
+    webpage: "https://rkdrn79.github.io/AnisoWM-page/"
     selected: y
     type: preprint
     year: 2026
