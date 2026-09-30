@@ -36,7 +36,7 @@ papers:
   - title: "TripleSumm: Adaptive Triple-Modality Fusion for Video Summarization"
     authors: "Sumin Kim<sup>*</sup>, Hyemin Jung<sup>*</sup>, <b>Mingu Kang<sup>*</sup></b>, Yejin Kim, Yoori Oh<sup>&dagger;</sup>, Joonseok Lee<sup>&dagger;</sup>"
     venue: "International Conference on Learning Representations (ICLR), 2026."
-    paper_pdf: "https://arxiv.org/abs/2411.19527"
+    paper_pdf: "https://arxiv.org/pdf/2603.01169"
     webpage: "https://smkim37.github.io/TripleSumm-page/"
     selected: y
     type: conference
