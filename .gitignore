@@ -1,5 +1,6 @@
 *.github.io/
 _site/
+.jekyll-cache/
 .DS_Store
 libs/external/font-awesome-4.7.0/
 libs/external/fontawesome-free-6.6.0-web/css/*

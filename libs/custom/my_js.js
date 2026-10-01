@@ -5,9 +5,7 @@ $(document).ready(function() {
   // ===============================================
 
   var $nav = $('.navbar'),
-      $body = $('body'),
-      $window = $(window),
-      navOffsetTop = $nav.offset().top;
+      $window = $(window);
 
   // Active filters state
   var activeFilters = {
@@ -17,8 +15,12 @@ $(document).ready(function() {
   };
 
   function init() {
-    $window.on('scroll', onScroll);
-    $window.on('resize', resize);
+    initNavigation();
+    $window.on('scroll', updateNavState);
+    $window.on('resize', handleResize);
+    $window.on('load', function() {
+      setTimeout(updateNavState, 100);
+    });
     $('a[href^="#"]').on('click', smoothScroll);
 
     // Initialize features
@@ -27,6 +29,7 @@ $(document).ready(function() {
     initContentToggles();
     initBibtexToast();
     initKeywordChips();
+    updateNavState();
   }
 
   // ================ NEURAL MAP (D3.js) ================
@@ -326,16 +329,16 @@ $(document).ready(function() {
     // View toggle (Highlights/Archive)
     $('#view-toggle .pill').on('click', function() {
       var ref = $(this).data('ref');
-      $('#view-toggle .pill').removeClass('active');
-      $(this).addClass('active');
+      $('#view-toggle .pill').removeClass('active').attr('aria-pressed', 'false');
+      $(this).addClass('active').attr('aria-pressed', 'true');
       $('.tab-pane').removeClass('active');
       $(ref).addClass('active');
     });
 
     // Type filter
     $('#type-filter .pill').on('click', function() {
-      $('#type-filter .pill').removeClass('active');
-      $(this).addClass('active');
+      $('#type-filter .pill').removeClass('active').attr('aria-pressed', 'false');
+      $(this).addClass('active').attr('aria-pressed', 'true');
       activeFilters.type = $(this).data('filter-value');
       applyFilters();
     });
@@ -418,8 +421,8 @@ $(document).ready(function() {
 
       $group.find('[data-target]').on('click', function() {
         var target = $(this).data('target');
-        $group.find('[data-target]').removeClass('active');
-        $(this).addClass('active');
+        $group.find('[data-target]').removeClass('active').attr('aria-pressed', 'false');
+        $(this).addClass('active').attr('aria-pressed', 'true');
         $('[data-toggle-content="' + groupName + '"]').removeClass('active');
         $(target).addClass('active');
       });
@@ -473,34 +476,60 @@ $(document).ready(function() {
   }
 
   // ================ NAVIGATION ================
+  function initNavigation() {
+    var $toggle = $('.nav-toggle');
+    var $links = $('#nav-links');
+
+    $toggle.on('click', function() {
+      var isOpen = !$links.hasClass('is-open');
+      $links.toggleClass('is-open', isOpen);
+      $toggle.attr('aria-expanded', isOpen);
+      $toggle.attr('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+      $toggle.find('i').toggleClass('fa-bars', !isOpen).toggleClass('fa-xmark', isOpen);
+    });
+
+    $('.navbar-link').on('click', closeNavigation);
+
+    $(document).on('keydown', function(e) {
+      if (e.key === 'Escape') closeNavigation();
+    });
+  }
+
+  function closeNavigation() {
+    var $toggle = $('.nav-toggle');
+    $('#nav-links').removeClass('is-open');
+    $toggle.attr('aria-expanded', 'false').attr('aria-label', 'Open navigation');
+    $toggle.find('i').removeClass('fa-xmark').addClass('fa-bars');
+  }
+
   function smoothScroll(e) {
-    e.preventDefault();
-    $(document).off('scroll');
     var target = this.hash;
     var $target = $(target);
-    if ($target.length) {
-      $('html, body').stop().animate({
-        scrollTop: $target.offset().top - 40
-      }, 400, 'swing', function() {
-        window.location.hash = target;
-        $(document).on('scroll', onScroll);
-      });
-    }
+    if (!$target.length) return;
+
+    e.preventDefault();
+    $window.scrollTop($target.offset().top - $nav.outerHeight() - 14);
+    window.history.pushState(null, '', target);
+    updateNavState();
   }
 
-  function resize() {
-    $body.removeClass('has-docked-nav');
-    navOffsetTop = $nav.offset().top;
-    onScroll();
+  function handleResize() {
+    if ($window.width() > 800) closeNavigation();
+    updateNavState();
   }
 
-  function onScroll() {
-    if (navOffsetTop < $window.scrollTop() && !$body.hasClass('has-docked-nav')) {
-      $body.addClass('has-docked-nav');
-    }
-    if (navOffsetTop > $window.scrollTop() && $body.hasClass('has-docked-nav')) {
-      $body.removeClass('has-docked-nav');
-    }
+  function updateNavState() {
+    var marker = $window.scrollTop() + $nav.outerHeight() + 96;
+    var activeHref = '';
+
+    $('.navbar-link[href^="#"]').each(function() {
+      var href = $(this).attr('href');
+      var $section = $(href);
+      if ($section.length && $section.offset().top <= marker) activeHref = href;
+    });
+
+    $('.navbar-link').removeClass('active');
+    if (activeHref) $('.navbar-link[href="' + activeHref + '"]').addClass('active');
   }
 
   init();

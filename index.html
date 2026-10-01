@@ -3,67 +3,74 @@ layout: default
 title: Home
 ---
 
-<!-- ========== BIO ========== -->
-<div class="docs-section" id="bio">
-  <h4>Bio</h4>
-  {% for paragraph in site.data.profile.bio %}
-    <p>{{ paragraph }}</p>
-  {% endfor %}
-</div>
-
-<!-- ========== NEWS ========== -->
-<div class="docs-section" id="news">
-  <h4>News</h4>
-  <ul class="news-list">
-    {% for item in site.data.news.news %}
-      <li>
-        <span class="news-date">{{ item.date }}</span>
-        <span>{{ item.text }}</span>
-      </li>
-    {% endfor %}
-  </ul>
-</div>
-
-<!-- ========== PUBLICATIONS ========== -->
-<div class="docs-section" id="publications">
-  <h4 class="section-title">
-    <span class="title-decoration"></span>
-    Publications
-    <span class="title-decoration"></span>
-  </h4>
-
-  <p class="section-subtitle">
-    Research outputs across venues. * = equal contribution; &dagger; = corresponding author.
-    <!-- <a href="{{ site.data.main_info.google_scholar }}" target="_blank" class="scholar-link">
-      <i class="ai ai-google-scholar"></i> Full list on Scholar
-    </a> -->
-  </p>
-
-  <div class="filter-bar">
-    <div class="filter-pills" id="view-toggle">
-      <button class="pill active" data-ref="#papers-selected">Selected</button>
-      <button class="pill" data-ref="#papers-all">All</button>
+<section class="docs-section intro-section" id="bio">
+  <div class="section-grid">
+    <header class="section-heading">
+      <span class="section-label">About</span>
+      <h2>Bio</h2>
+    </header>
+    <div class="section-content bio-copy">
+      {% for paragraph in site.data.profile.bio %}
+        <p>{{ paragraph }}</p>
+      {% endfor %}
     </div>
-    <div class="filter-divider"></div>
-    <div class="filter-pills" id="type-filter">
-      <button class="pill small active" data-filter-type="type" data-filter-value="all">All</button>
-      <button class="pill small" data-filter-type="type" data-filter-value="conference">
-        <span class="pill-dot conference"></span>Conf
+  </div>
+</section>
+
+<section class="docs-section news-section" id="news">
+  <div class="section-grid">
+    <header class="section-heading">
+      <span class="section-label">Updates</span>
+      <h2>News</h2>
+    </header>
+    <div class="section-content">
+      <ul class="news-list">
+        {% for item in site.data.news.news %}
+          <li>
+            <time class="news-date">{{ item.date }}</time>
+            <span>{{ item.text }}</span>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="docs-section publications-section" id="publications">
+  <header class="section-top">
+    <div>
+      <span class="section-label">Research output</span>
+      <h2>Publications</h2>
+      <p class="section-subtitle">* Equal contribution. &dagger; Corresponding author.</p>
+    </div>
+  </header>
+
+  <div class="filter-bar" aria-label="Publication filters">
+    <div class="filter-pills" id="view-toggle" role="group" aria-label="Publication set">
+      <button class="pill active" type="button" data-ref="#papers-selected" aria-pressed="true">Selected</button>
+      <button class="pill" type="button" data-ref="#papers-all" aria-pressed="false">All</button>
+    </div>
+    <div class="filter-divider" aria-hidden="true"></div>
+    <div class="filter-pills" id="type-filter" role="group" aria-label="Publication type">
+      <button class="pill small active" type="button" data-filter-type="type" data-filter-value="all" aria-pressed="true">All</button>
+      <button class="pill small" type="button" data-filter-type="type" data-filter-value="conference" aria-pressed="false">
+        <span class="pill-dot conference" aria-hidden="true"></span>Conference
       </button>
-      <button class="pill small" data-filter-type="type" data-filter-value="preprint">
-        <span class="pill-dot preprint"></span>Preprint
+      <button class="pill small" type="button" data-filter-type="type" data-filter-value="preprint" aria-pressed="false">
+        <span class="pill-dot preprint" aria-hidden="true"></span>Preprint
       </button>
     </div>
-    <div class="filter-divider"></div>
+    <div class="filter-divider" aria-hidden="true"></div>
     <div class="year-slider-container">
+      <label for="year-slider">Year</label>
       <input type="range" id="year-slider" min="2024" max="2026" value="2026" class="year-slider">
       <div class="year-labels">
         <span>2024</span>
-        <span id="year-display">All Years</span>
+        <span id="year-display">All years</span>
         <span>2026</span>
       </div>
     </div>
-    <div class="active-filters" id="active-filters"></div>
+    <div class="active-filters" id="active-filters" aria-live="polite"></div>
   </div>
 
   <div class="tab-content">
@@ -94,150 +101,184 @@ title: Home
       {% endfor %}
     </div>
   </div>
-</div>
+</section>
 
-<!-- ========== RESEARCH TOPIC ========== -->
 {% if site.data.profile.show_research_topics %}
-  <div class="docs-section" id="research-topic">
-    <h4>Research Topic</h4>
-    <p class="section-subtitle">Click a topic to filter publications above.</p>
+  <section class="docs-section" id="research-topic">
+    <header class="section-top">
+      <div>
+        <span class="section-label">Publication map</span>
+        <h2>Research topics</h2>
+      </div>
+    </header>
     <div id="neural-map-container">
       <div id="neural-tooltip"></div>
     </div>
-  </div>
+  </section>
 {% endif %}
 
-<!-- ========== PATENTS ========== -->
-<div class="docs-section" id="patents">
-  <h4>Patents</h4>
-  {% for patent in site.data.patents.patents %}
-    <div class="entry-card">
-      <h5 class="entry-title">{{ patent.title }}</h5>
-      <p>{{ patent.status }}</p>
-      <p class="entry-meta">Inventors: {{ patent.inventors }}</p>
+<section class="docs-section" id="patents">
+  <header class="section-top">
+    <div>
+      <span class="section-label">Intellectual property</span>
+      <h2>Patents</h2>
     </div>
-  {% endfor %}
-</div>
-
-<!-- ========== EXPERIENCE ========== -->
-<div class="docs-section" id="experience">
-  <h4>Research Experience</h4>
-  {% for exp in site.data.experience.experiences %}
-    <div class="paper experience-card">
-      <div class="row">
-        <div class="three columns">
-          <div class="figure">
-            {% if exp.logo %}
-              <img src="{{ '/assets/logos/' | append: exp.logo | prepend: site.baseurl }}" width="{{ exp.width }}%" alt="{{ exp.place }} logo">
-            {% else %}
-              <img src="{{ '/assets/logos/default.png' | prepend: site.baseurl }}" width="55%" alt="">
-            {% endif %}
-          </div>
+  </header>
+  <div class="entry-list">
+    {% for patent in site.data.patents.patents %}
+      <article class="entry-card">
+        <div class="entry-body">
+          <h3 class="entry-title">{{ patent.title }}</h3>
+          <p>{{ patent.status }}</p>
+          <p class="entry-meta">Inventors: {{ patent.inventors }}</p>
         </div>
-        <div class="nine columns">
-          <p><b>{{ exp.place }}</b> <b class="right-meta"><i>{{ exp.location }}</i></b></p>
-          <p>{{ exp.title }} <b class="right-meta"><i>{{ exp.time }}</i></b></p>
-          {% if exp.supervisor %}
-            <p>{{ exp.supervisor }}</p>
-          {% endif %}
-          {% if exp.lab %}
-            <p>
-              {% if exp.lab_url %}
-                <a href="{{ exp.lab_url }}" target="_blank">{{ exp.lab }}</a>
-              {% else %}
-                {{ exp.lab }}
-              {% endif %}
-            </p>
-          {% endif %}
-          {% if exp.summary %}
-            <p>{{ exp.summary }}</p>
-          {% endif %}
-        </div>
-      </div>
-    </div>
-  {% endfor %}
-</div>
-
-<!-- ========== PROJECTS ========== -->
-<div class="docs-section" id="projects">
-  <h4>Projects</h4>
-  {% for project in site.data.projects.projects %}
-    <div class="entry-card">
-      <h5 class="entry-title">{{ project.title }}</h5>
-      <p>{{ project.description }}</p>
-      <p class="entry-meta">{{ project.program }}, {{ project.time }}</p>
-    </div>
-  {% endfor %}
-</div>
-
-<!-- ========== AWARDS ========== -->
-<div class="docs-section" id="awards">
-  <h4>Awards</h4>
-  <div class="filter-bar compact-filter" data-toggle-group="awards">
-    <div class="filter-pills">
-      <button class="pill active" data-target="#awards-selected">Selected</button>
-      <button class="pill" data-target="#awards-all">All</button>
-    </div>
+      </article>
+    {% endfor %}
   </div>
+</section>
 
-  <div class="content-pane active" id="awards-selected" data-toggle-content="awards">
+<section class="docs-section" id="experience">
+  <header class="section-top">
+    <div>
+      <span class="section-label">Appointments</span>
+      <h2>Research experience</h2>
+    </div>
+  </header>
+  <div class="experience-list">
+    {% for exp in site.data.experience.experiences %}
+      <article class="experience-card">
+        <div class="experience-date">{{ exp.time }}</div>
+        <div class="experience-logo">
+          {% if exp.logo %}
+            <img src="{{ '/assets/logos/' | append: exp.logo | prepend: site.baseurl }}" alt="{{ exp.place }} logo">
+          {% else %}
+            <img src="{{ '/assets/logos/default.png' | prepend: site.baseurl }}" alt="">
+          {% endif %}
+        </div>
+        <div class="experience-body">
+          <p class="entry-kicker">{{ exp.place }} <span>{{ exp.location }}</span></p>
+          <h3>{{ exp.title }}</h3>
+          {% if exp.summary %}<p>{{ exp.summary }}</p>{% endif %}
+          <p class="entry-meta">
+            {% if exp.lab_url %}<a href="{{ exp.lab_url }}" target="_blank" rel="noopener noreferrer">{{ exp.lab }}</a>{% else %}{{ exp.lab }}{% endif %}
+            {% if exp.supervisor %}<span aria-hidden="true"> · </span>{{ exp.supervisor }}{% endif %}
+          </p>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="docs-section" id="projects">
+  <header class="section-top">
+    <div>
+      <span class="section-label">Funded work</span>
+      <h2>Projects</h2>
+    </div>
+  </header>
+  <div class="entry-list">
+    {% for project in site.data.projects.projects %}
+      <article class="entry-card entry-card-dated">
+        <div class="entry-date">{{ project.time }}</div>
+        <div class="entry-body">
+          <p class="entry-kicker">{{ project.program }}</p>
+          <h3 class="entry-title">{{ project.title }}</h3>
+          <p>{{ project.description }}</p>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="docs-section" id="awards">
+  <header class="section-top section-top-actions">
+    <div>
+      <span class="section-label">Recognition</span>
+      <h2>Honors &amp; awards</h2>
+    </div>
+    <div class="compact-filter" data-toggle-group="awards" role="group" aria-label="Awards view">
+      <button class="pill active" type="button" data-target="#awards-selected" aria-pressed="true">Selected</button>
+      <button class="pill" type="button" data-target="#awards-all" aria-pressed="false">All</button>
+    </div>
+  </header>
+
+  <div class="content-pane active entry-list" id="awards-selected" data-toggle-content="awards">
     {% assign selected_awards = site.data.awards.awards | where: "selected", "y" %}
     {% for award in selected_awards %}
       {% include award_card.html award=award %}
     {% endfor %}
   </div>
 
-  <div class="content-pane" id="awards-all" data-toggle-content="awards">
+  <div class="content-pane entry-list" id="awards-all" data-toggle-content="awards">
     {% for award in site.data.awards.awards %}
       {% include award_card.html award=award %}
     {% endfor %}
   </div>
-</div>
+</section>
 
-<!-- ========== SCHOLARSHIPS ========== -->
-<div class="docs-section" id="scholarships">
-  <h4>Fellowships &amp; Scholarships</h4>
-  {% for scholarship in site.data.scholarships.scholarships %}
-    <div class="entry-card">
-      <h5 class="entry-title">{{ scholarship.title }}</h5>
-      <p>{{ scholarship.description }}</p>
-      <p class="entry-meta">{{ scholarship.organization }}, {{ scholarship.date }}</p>
+<section class="docs-section" id="scholarships">
+  <header class="section-top">
+    <div>
+      <span class="section-label">Support</span>
+      <h2>Fellowships &amp; scholarships</h2>
     </div>
-  {% endfor %}
-</div>
+  </header>
+  <div class="entry-list">
+    {% for scholarship in site.data.scholarships.scholarships %}
+      <article class="entry-card entry-card-dated">
+        <div class="entry-date">{{ scholarship.date }}</div>
+        <div class="entry-body">
+          <h3 class="entry-title">{{ scholarship.title }}</h3>
+          <p class="entry-kicker">{{ scholarship.organization }}</p>
+          <p>{{ scholarship.description }}</p>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+</section>
 
-<!-- ========== ACADEMIC SERVICES ========== -->
-<div class="docs-section" id="academic-services">
-  <h4>Academic Services</h4>
-  {% for service in site.data.academic_services.services %}
-    <div class="entry-card">
-      <h5 class="entry-title">{{ service.role }}</h5>
-      <p class="entry-meta">{{ service.organization }}, {{ service.date }}</p>
+<section class="docs-section" id="academic-services">
+  <header class="section-top">
+    <div>
+      <span class="section-label">Community</span>
+      <h2>Academic services</h2>
     </div>
-  {% endfor %}
-</div>
+  </header>
+  <div class="entry-list">
+    {% for service in site.data.academic_services.services %}
+      <article class="entry-card entry-card-dated">
+        <div class="entry-date">{{ service.date }}</div>
+        <div class="entry-body">
+          <h3 class="entry-title">{{ service.role }}</h3>
+          <p class="entry-meta">{{ service.organization }}</p>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+</section>
 
-<!-- ========== CV ========== -->
-<div class="docs-section" id="resume">
-  <h4>CV</h4>
-  <p>Full CV in <a href="{{ site.data.main_info.cv | prepend: site.baseurl }}" target="_blank">PDF</a>.</p>
-</div>
+<section class="docs-section cv-section" id="resume">
+  <div>
+    <span class="section-label">Curriculum vitae</span>
+    <h2>Full academic record</h2>
+  </div>
+  <a class="button-link button-primary" href="{{ site.data.main_info.cv | prepend: site.baseurl }}" target="_blank" rel="noopener noreferrer">
+    <i class="fa-regular fa-file-lines" aria-hidden="true"></i>
+    Open CV
+  </a>
+</section>
 
-<!-- Terminal-style BibTeX Toast -->
-<div id="bibtex-toast" class="bibtex-toast">
+<div id="bibtex-toast" class="bibtex-toast" role="status" aria-live="polite">
   <div class="toast-header">
-    <span class="toast-dots">
-      <span></span><span></span><span></span>
-    </span>
-    <span class="toast-title">bibtex</span>
+    <span class="toast-title">BibTeX</span>
   </div>
   <pre id="bibtex-content" class="toast-content"></pre>
   <div class="toast-actions">
-    <button id="copy-bibtex" class="toast-btn">
-      <i class="fa-solid fa-copy"></i> Copy
+    <button id="copy-bibtex" class="toast-btn" type="button">
+      <i class="fa-solid fa-copy" aria-hidden="true"></i> Copy
     </button>
-    <button id="close-bibtex" class="toast-btn secondary">
-      <i class="fa-solid fa-xmark"></i>
+    <button id="close-bibtex" class="toast-btn secondary" type="button" aria-label="Close BibTeX">
+      <i class="fa-solid fa-xmark" aria-hidden="true"></i>
     </button>
   </div>
 </div>
