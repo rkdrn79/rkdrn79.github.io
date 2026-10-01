@@ -255,7 +255,7 @@ input:focus-visible {
   margin-top: 8px;
   color: var(--blue-bright);
   font-size: 14.5px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .hero-intro {
@@ -419,6 +419,22 @@ input:focus-visible {
   background: var(--paper-deep);
 }
 
+.publication-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.year-filter .pill {
+  min-width: 64px;
+}
+
+.year-filter .pill:first-child {
+  min-width: 88px;
+}
+
 .pill {
   min-width: 88px;
   height: auto;
@@ -457,6 +473,10 @@ input:focus-visible {
 }
 
 /* Publications */
+.publications-section {
+  overflow-anchor: none;
+}
+
 .publication-list {
   border-top: 1px solid var(--line);
 }
@@ -987,6 +1007,11 @@ sup {
     display: grid;
     gap: 22px;
     margin-bottom: 32px;
+  }
+
+  .publication-controls {
+    align-items: flex-start;
+    justify-content: flex-start;
   }
 
   .timeline-item {

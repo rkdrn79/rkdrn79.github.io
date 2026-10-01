@@ -3,19 +3,6 @@ layout: default
 title: Home
 ---
 
-<section class="docs-section intro-section" id="bio">
-  <div class="site-shell two-column">
-    <header class="section-heading reveal">
-      <h2>Bio</h2>
-    </header>
-    <div class="section-content bio-copy reveal">
-      {% for paragraph in site.data.profile.bio %}
-        <p>{{ paragraph }}</p>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
 <section class="docs-section news-section" id="news">
   <div class="site-shell two-column">
     <header class="section-heading reveal">
@@ -38,9 +25,18 @@ title: Home
   <div class="site-shell">
     <header class="section-top reveal">
       <h2>Publications</h2>
-      <div class="filter-tabs" id="view-toggle" role="group" aria-label="Publication set">
-        <button class="pill active" type="button" data-ref="#papers-selected" aria-pressed="true">Selected</button>
-        <button class="pill" type="button" data-ref="#papers-all" aria-pressed="false">All <span>{{ site.data.publications.papers | size }}</span></button>
+      <div class="publication-controls">
+        <div class="filter-tabs" id="view-toggle" role="group" aria-label="Publication set">
+          <button class="pill active" type="button" data-ref="#papers-selected" aria-pressed="true">Selected</button>
+          <button class="pill" type="button" data-ref="#papers-all" aria-pressed="false">All <span>{{ site.data.publications.papers | size }}</span></button>
+        </div>
+        {% assign publication_years = site.data.publications.papers | map: "year" | uniq | sort | reverse %}
+        <div class="filter-tabs year-filter" id="year-filter" role="group" aria-label="Publication year">
+          <button class="pill active" type="button" data-year="all" aria-pressed="true">All years</button>
+          {% for year in publication_years %}
+            <button class="pill" type="button" data-year="{{ year }}" aria-pressed="false">{{ year }}</button>
+          {% endfor %}
+        </div>
       </div>
     </header>
 
@@ -108,6 +104,25 @@ title: Home
   </div>
 </section>
 
+<section class="docs-section" id="projects">
+  <div class="site-shell">
+    <header class="section-top reveal"><h2>Projects</h2></header>
+    <div class="collection-list reveal">
+      {% for project in site.data.projects.projects %}
+        <article class="collection-item">
+          <div class="collection-date">{{ project.time }}</div>
+          <div class="collection-body">
+            <h3>{{ project.title }}</h3>
+            <p>{{ project.program }}</p>
+            <p class="collection-desc">{{ project.description }}</p>
+          </div>
+          <span class="collection-badge">Research</span>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
 <section class="docs-section" id="experience">
   <div class="site-shell">
     <header class="section-top reveal"><h2>Research Experiences</h2></header>
@@ -132,25 +147,6 @@ title: Home
               {% if exp.supervisor %}<span aria-hidden="true"> &middot; </span>{{ exp.supervisor }}{% endif %}
             </p>
           </div>
-        </article>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="docs-section" id="projects">
-  <div class="site-shell">
-    <header class="section-top reveal"><h2>Projects</h2></header>
-    <div class="collection-list reveal">
-      {% for project in site.data.projects.projects %}
-        <article class="collection-item">
-          <div class="collection-date">{{ project.time }}</div>
-          <div class="collection-body">
-            <h3>{{ project.title }}</h3>
-            <p>{{ project.program }}</p>
-            <p class="collection-desc">{{ project.description }}</p>
-          </div>
-          <span class="collection-badge">Research</span>
         </article>
       {% endfor %}
     </div>

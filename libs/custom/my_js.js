@@ -334,33 +334,19 @@ $(document).ready(function() {
       $(this).addClass('active').attr('aria-pressed', 'true');
       $('.tab-pane').removeClass('active');
       $(ref).addClass('active');
+      applyFilters();
     });
 
-    // Type filter
-    $('#type-filter .pill').on('click', function() {
-      $('#type-filter .pill').removeClass('active').attr('aria-pressed', 'false');
+    $('#year-filter .pill').on('click', function() {
+      $('#year-filter .pill').removeClass('active').attr('aria-pressed', 'false');
       $(this).addClass('active').attr('aria-pressed', 'true');
-      activeFilters.type = $(this).data('filter-value');
+      activeFilters.year = $(this).data('year');
       applyFilters();
+      $window.scrollTop($('#publications').offset().top - $nav.outerHeight() - 14);
+      updateNavState();
     });
 
-    // Year slider
-    var $slider = $('#year-slider');
-    var $display = $('#year-display');
-    if (!$slider.length) return;
-    var maxYear = parseInt($slider.attr('max'), 10);
-
-    $slider.on('input', function() {
-      var val = parseInt(this.value);
-      if (val >= maxYear) {
-        activeFilters.year = 'all';
-        $display.text('All Years');
-      } else {
-        activeFilters.year = val;
-        $display.text('≤ ' + val);
-      }
-      applyFilters();
-    });
+    applyFilters();
   }
 
   function applyFilters() {
@@ -375,7 +361,7 @@ $(document).ready(function() {
       var keywords = ($paper.data('keywords') || '').toString().toLowerCase();
 
       var typeMatch = activeFilters.type === 'all' || type === activeFilters.type;
-      var yearMatch = activeFilters.year === 'all' || year <= activeFilters.year;
+      var yearMatch = activeFilters.year === 'all' || year === parseInt(activeFilters.year, 10);
       var keywordMatch = !activeFilters.keyword || keywords.indexOf(activeFilters.keyword.toLowerCase()) !== -1;
 
       if (typeMatch && yearMatch && keywordMatch) {
@@ -392,6 +378,19 @@ $(document).ready(function() {
         '<button onclick="clearKeywordFilter()">&times;</button></span>'
       );
     }
+
+    updatePublicationNumbers();
+  }
+
+  function updatePublicationNumbers() {
+    $('.publication-list').each(function() {
+      var number = 0;
+      $(this).find('.paper-card').each(function() {
+        if ($(this).hasClass('filtered-out')) return;
+        number += 1;
+        $(this).find('.publication-number').text(number < 10 ? '0' + number : number);
+      });
+    });
   }
 
   window.filterByKeyword = function(keyword) {
