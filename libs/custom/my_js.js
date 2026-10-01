@@ -29,6 +29,7 @@ $(document).ready(function() {
     initContentToggles();
     initBibtexToast();
     initKeywordChips();
+    initReveal();
     updateNavState();
   }
 
@@ -346,6 +347,7 @@ $(document).ready(function() {
     // Year slider
     var $slider = $('#year-slider');
     var $display = $('#year-display');
+    if (!$slider.length) return;
     var maxYear = parseInt($slider.attr('max'), 10);
 
     $slider.on('input', function() {
@@ -485,7 +487,6 @@ $(document).ready(function() {
       $links.toggleClass('is-open', isOpen);
       $toggle.attr('aria-expanded', isOpen);
       $toggle.attr('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
-      $toggle.find('i').toggleClass('fa-bars', !isOpen).toggleClass('fa-xmark', isOpen);
     });
 
     $('.navbar-link').on('click', closeNavigation);
@@ -499,7 +500,6 @@ $(document).ready(function() {
     var $toggle = $('.nav-toggle');
     $('#nav-links').removeClass('is-open');
     $toggle.attr('aria-expanded', 'false').attr('aria-label', 'Open navigation');
-    $toggle.find('i').removeClass('fa-xmark').addClass('fa-bars');
   }
 
   function smoothScroll(e) {
@@ -514,13 +514,15 @@ $(document).ready(function() {
   }
 
   function handleResize() {
-    if ($window.width() > 800) closeNavigation();
+    if ($window.width() > 760) closeNavigation();
     updateNavState();
   }
 
   function updateNavState() {
-    var marker = $window.scrollTop() + $nav.outerHeight() + 96;
+    var marker = $window.scrollTop() + Math.min(360, $window.height() * 0.45);
     var activeHref = '';
+
+    $nav.toggleClass('is-scrolled', $window.scrollTop() > 12);
 
     $('.navbar-link[href^="#"]').each(function() {
       var href = $(this).attr('href');
@@ -530,6 +532,28 @@ $(document).ready(function() {
 
     $('.navbar-link').removeClass('active');
     if (activeHref) $('.navbar-link[href="' + activeHref + '"]').addClass('active');
+  }
+
+  function initReveal() {
+    var elements = document.querySelectorAll('.reveal');
+    if (!elements.length) return;
+
+    if (!('IntersectionObserver' in window)) {
+      $(elements).addClass('is-visible');
+      return;
+    }
+
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.08 });
+
+    elements.forEach(function(element) {
+      observer.observe(element);
+    });
   }
 
   init();

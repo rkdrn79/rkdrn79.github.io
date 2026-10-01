@@ -5,118 +5,101 @@
   <title>{{ site.data.main_info.name }} | {{ page.title }}</title>
   <meta name="description" content="{{ site.data.main_info.name }} - video understanding and world models researcher at Seoul National University.">
   <meta name="author" content="{{ site.data.main_info.name }}">
-  <meta property="og:title" content="{{ site.data.main_info.name }}" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://rkdrn79.github.io" />
-  <meta property="og:site_name" content="{{ site.data.main_info.name }}" />
+  <meta property="og:title" content="{{ site.data.main_info.name }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rkdrn79.github.io">
+  <meta property="og:site_name" content="{{ site.data.main_info.name }}">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#ffffff">
-  <link rel="canonical" href="https://rkdrn79.github.io" />
+  <link rel="canonical" href="https://rkdrn79.github.io">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=Manrope:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&amp;family=Manrope:wght@500;600;700&amp;display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href={{ "/libs/external/skeleton/normalize.css" | prepend: site.baseurl }}>
-  <link rel="stylesheet" href={{ "/libs/external/skeleton/skeleton.css" | prepend: site.baseurl }}>
-  <link rel="stylesheet" href={{ "/libs/custom/my_css.css" | prepend: site.baseurl }}>
-  <link rel="stylesheet" href={{ "/libs/external/fontawesome-free-6.6.0-web/css/all.min.css" | prepend: site.baseurl }}>
-  <link rel="stylesheet" href={{ "/libs/external/academicons-1.8.6/css/academicons.min.css" | prepend: site.baseurl }}>
+  <link rel="stylesheet" href="{{ '/libs/external/skeleton/normalize.css' | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ '/libs/external/skeleton/skeleton.css' | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ '/libs/custom/my_css.css' | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ '/libs/external/fontawesome-free-6.6.0-web/css/all.min.css' | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ '/libs/external/academicons-1.8.6/css/academicons.min.css' | prepend: site.baseurl }}">
 
-  <script src={{ "/libs/external/jquery-3.1.1.min.js" | prepend: site.baseurl }}></script>
+  <script src="{{ '/libs/external/jquery-3.1.1.min.js' | prepend: site.baseurl }}"></script>
   {% if site.data.profile.show_research_topics %}
     <script src="https://d3js.org/d3.v7.min.js"></script>
   {% endif %}
-  <script src={{ "/libs/custom/my_js.js" | prepend: site.baseurl }}></script>
+  <script src="{{ '/libs/custom/my_js.js' | prepend: site.baseurl }}"></script>
 
-  <link rel="icon" type="image/svg+xml" href={{ "/assets/site-logo.svg" | prepend: site.baseurl }}>
-  <link rel="alternate icon" type="image/png" href={{ "/assets/favicon.png" | prepend: site.baseurl }}>
+  <link rel="icon" type="image/svg+xml" href="{{ '/assets/site-logo.svg' | prepend: site.baseurl }}">
+  <link rel="alternate icon" type="image/png" href="{{ '/assets/favicon.png' | prepend: site.baseurl }}">
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
 
   <nav class="navbar" aria-label="Primary navigation">
     <div class="site-shell navbar-inner">
-      <a class="navbar-brand" href="{{ site.baseurl }}/" aria-label="{{ site.data.main_info.name }}, home">
+      <a class="navbar-brand" href="#top" aria-label="{{ site.data.main_info.name }}, back to top">
         <img class="brand-mark" src="{{ '/assets/site-logo.svg' | prepend: site.baseurl }}" alt="">
         <span>{{ site.data.main_info.name }}</span>
       </a>
 
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation">
-        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        <span></span><span></span>
       </button>
 
-      <ul class="navbar-list" id="nav-links">
-        <li class="navbar-item"><a class="navbar-link" href="#bio">About</a></li>
-        <li class="navbar-item"><a class="navbar-link" href="#publications">Publications</a></li>
-        <li class="navbar-item"><a class="navbar-link" href="#experience">Experience</a></li>
-        <li class="navbar-item"><a class="navbar-link" href="#projects">Projects</a></li>
-        <li class="navbar-item"><a class="navbar-link" href="#awards">Awards</a></li>
-        <li class="navbar-item"><a class="navbar-link" href="#scholarships">Scholarships</a></li>
-      </ul>
+      <div class="navbar-list" id="nav-links">
+        <a class="navbar-link" href="#top">About</a>
+        <a class="navbar-link" href="#publications">Publications</a>
+        <a class="navbar-link" href="#experience">Experiences</a>
+        <a class="navbar-link" href="#projects">Projects</a>
+        <a class="navbar-link" href="#awards">Awards</a>
+        <a class="navbar-link" href="#scholarships">Scholarships</a>
+      </div>
     </div>
   </nav>
 
   <header class="hero" id="top">
     <div class="site-shell hero-grid">
-      <div class="hero-copy">
-        <div class="hero-identity">
-          <p class="hero-kicker">Video Understanding <span aria-hidden="true">/</span> World Models</p>
-          <h1>{{ site.data.main_info.name }}</h1>
-          <p class="hero-role">{{ site.data.main_info.title }}</p>
+      <div class="hero-copy reveal">
+        <h1>{{ site.data.main_info.name }}</h1>
+        <p class="hero-role">{{ site.data.main_info.title }}</p>
+        <div class="hero-intro">
+          <p>Researching video understanding and world models through multimodal representations for prediction, planning, and decision-making.</p>
         </div>
-        <p class="hero-statement">Building multimodal representations for understanding, predicting, and planning in dynamic visual worlds.</p>
 
         <div class="hero-actions">
-          <a class="button-link button-primary" href="mailto:{{ site.data.main_info.email }}">
-            <i class="fa-regular fa-envelope" aria-hidden="true"></i>
-            Email
-          </a>
+          <a class="button-link button-primary" href="mailto:{{ site.data.main_info.email }}">Email</a>
           {% if site.data.main_info.cv %}
-            <a class="icon-link" href="{{ site.data.main_info.cv | prepend: site.baseurl }}" target="_blank" rel="noopener noreferrer" aria-label="Curriculum vitae" title="CV">
-              <i class="ai ai-cv" aria-hidden="true"></i>
-            </a>
+            <a class="button-link button-secondary" href="{{ site.data.main_info.cv | prepend: site.baseurl }}" target="_blank" rel="noopener noreferrer">CV</a>
           {% endif %}
           {% if site.data.main_info.linkedin %}
-            <a class="icon-link" href="{{ site.data.main_info.linkedin }}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
-              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
-            </a>
+            <a class="button-link button-secondary" href="{{ site.data.main_info.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           {% endif %}
           {% if site.data.main_info.github %}
-            <a class="icon-link" href="{{ site.data.main_info.github }}" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
-              <i class="fa-brands fa-github" aria-hidden="true"></i>
-            </a>
+            <a class="button-link button-secondary" href="{{ site.data.main_info.github }}" target="_blank" rel="noopener noreferrer">GitHub</a>
           {% endif %}
           {% if site.data.main_info.google_scholar %}
-            <a class="icon-link" href="{{ site.data.main_info.google_scholar }}" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar" title="Google Scholar">
-              <i class="ai ai-google-scholar" aria-hidden="true"></i>
-            </a>
+            <a class="button-link button-secondary" href="{{ site.data.main_info.google_scholar }}" target="_blank" rel="noopener noreferrer">Scholar</a>
           {% endif %}
         </div>
       </div>
 
-      <figure class="portrait-wrap">
+      <div class="portrait-wrap reveal">
         <div class="portrait-frame">
           <img class="profile-photo" src="{{ site.baseurl }}{{ site.data.main_info.profile_pic }}" alt="Portrait of {{ site.data.main_info.name }}" width="1536" height="2049">
         </div>
-        <figcaption>Seoul National University <span>2026</span></figcaption>
-      </figure>
+      </div>
     </div>
   </header>
 
   <main id="main-content" class="site-main">
-    <div class="site-shell">
-      {{ content }}
-    </div>
+    {{ content }}
   </main>
 
   <footer class="footer">
     <div class="site-shell footer-inner">
-      <div>
-        <strong>{{ site.data.main_info.name }}</strong>
-        <a href="mailto:{{ site.data.main_info.email }}">{{ site.data.main_info.email }}</a>
-      </div>
+      <p>&copy; 2026 {{ site.data.main_info.name }}</p>
       <div class="footer-links">
+        <a href="mailto:{{ site.data.main_info.email }}">Email</a>
         {% if site.data.main_info.linkedin %}<a href="{{ site.data.main_info.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>{% endif %}
         {% if site.data.main_info.github %}<a href="{{ site.data.main_info.github }}" target="_blank" rel="noopener noreferrer">GitHub</a>{% endif %}
         {% if site.data.main_info.google_scholar %}<a href="{{ site.data.main_info.google_scholar }}" target="_blank" rel="noopener noreferrer">Scholar</a>{% endif %}

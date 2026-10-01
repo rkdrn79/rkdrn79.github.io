@@ -1,59 +1,39 @@
 {% assign paper = include.paper %}
-<article class="paper-card" data-type="{{ paper.type }}" data-year="{{ paper.year }}" data-keywords="{{ paper.keywords | join: ',' }}">
-  <div class="paper-meta-column">
-    <span class="paper-type-label {{ paper.type }}">{{ paper.type }}</span>
-    <span class="paper-year-badge">{{ paper.year }}</span>
-  </div>
-  <div class="paper-content">
+<article class="paper-card publication-item" data-type="{{ paper.type }}" data-year="{{ paper.year }}" data-keywords="{{ paper.keywords | join: ',' }}">
+  <span class="publication-number">{% if include.number < 10 %}0{% endif %}{{ include.number }}</span>
+  <div class="paper-content publication-content">
     <h3 class="paper-title">{{ paper.title }}</h3>
-    <p class="paper-authors">{{ paper.authors }}</p>
-    <p class="paper-venue">{{ paper.venue }}</p>
-    {% if paper.note %}
-      <p class="paper-note">{{ paper.note }}</p>
+    <p class="paper-authors authors">{{ paper.authors }}</p>
+    {% if paper.type == "preprint" %}
+      <p class="paper-venue venue"><span>Preprint</span>{{ paper.year }}</p>
+    {% else %}
+      <p class="paper-venue venue">{{ paper.venue }}</p>
     {% endif %}
-    {% if paper.keywords %}
-      <div class="paper-keywords">
-        {% for kw in paper.keywords %}
-          <button class="keyword-chip" type="button">{{ kw }}</button>
-        {% endfor %}
+    {% if paper.note %}<p class="paper-note">{{ paper.note }}</p>{% endif %}
+    {% if paper.paper_pdf or paper.code or paper.data or paper.model or paper.webpage or paper.video or paper.bibtex %}
+      <div class="paper-actions">
+        {% if paper.paper_pdf %}
+          <a class="action-btn" href="{{ paper.paper_pdf | prepend: site.baseurl }}" target="_blank" rel="noopener noreferrer" title="Paper" aria-label="Open paper"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i></a>
+        {% endif %}
+        {% if paper.code %}
+          <a class="action-btn" href="{{ paper.code }}" target="_blank" rel="noopener noreferrer" title="Code" aria-label="Open code repository"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+        {% endif %}
+        {% if paper.data %}
+          <a class="action-btn" href="{{ paper.data }}" target="_blank" rel="noopener noreferrer" title="Data" aria-label="Open dataset"><i class="fa-solid fa-database" aria-hidden="true"></i></a>
+        {% endif %}
+        {% if paper.model %}
+          <a class="action-btn" href="{{ paper.model }}" target="_blank" rel="noopener noreferrer" title="Model" aria-label="Open model"><i class="fa-solid fa-cube" aria-hidden="true"></i></a>
+        {% endif %}
+        {% if paper.webpage %}
+          <a class="action-btn" href="{{ paper.webpage }}" target="_blank" rel="noopener noreferrer" title="Website" aria-label="Open project website"><i class="fa-solid fa-globe" aria-hidden="true"></i></a>
+        {% endif %}
+        {% if paper.video %}
+          <a class="action-btn" href="{{ paper.video }}" target="_blank" rel="noopener noreferrer" title="Video" aria-label="Open video"><i class="fa-solid fa-play" aria-hidden="true"></i></a>
+        {% endif %}
+        {% if paper.bibtex %}
+          <button class="action-btn bibtex-trigger" type="button" data-bibtex="{{ paper.bibtex | escape }}" title="Copy BibTeX" aria-label="Copy BibTeX"><i class="fa-solid fa-quote-right" aria-hidden="true"></i></button>
+        {% endif %}
       </div>
     {% endif %}
-    <div class="paper-actions">
-      {% if paper.paper_pdf %}
-        <a class="action-btn" href="{{ paper.paper_pdf | prepend: site.baseurl }}" target="_blank" rel="noopener noreferrer" title="Paper" aria-label="Open paper">
-          <i class="fa-solid fa-file-pdf"></i>
-        </a>
-      {% endif %}
-      {% if paper.code %}
-        <a class="action-btn" href="{{ paper.code }}" target="_blank" rel="noopener noreferrer" title="Code" aria-label="Open code repository">
-          <i class="fa-brands fa-github"></i>
-        </a>
-      {% endif %}
-      {% if paper.data %}
-        <a class="action-btn" href="{{ paper.data }}" target="_blank" rel="noopener noreferrer" title="Data" aria-label="Open dataset">
-          <i class="fa-solid fa-database"></i>
-        </a>
-      {% endif %}
-      {% if paper.model %}
-        <a class="action-btn" href="{{ paper.model }}" target="_blank" rel="noopener noreferrer" title="Model" aria-label="Open model">
-          <i class="fa-solid fa-cube"></i>
-        </a>
-      {% endif %}
-      {% if paper.webpage %}
-        <a class="action-btn" href="{{ paper.webpage }}" target="_blank" rel="noopener noreferrer" title="Website" aria-label="Open project website">
-          <i class="fa-solid fa-globe"></i>
-        </a>
-      {% endif %}
-      {% if paper.video %}
-        <a class="action-btn" href="{{ paper.video }}" target="_blank" rel="noopener noreferrer" title="Video" aria-label="Open video">
-          <i class="fa-solid fa-play"></i>
-        </a>
-      {% endif %}
-      {% if paper.bibtex %}
-        <button class="action-btn bibtex-trigger" type="button" data-bibtex="{{ paper.bibtex | escape }}" title="Copy BibTeX" aria-label="Copy BibTeX">
-          <i class="fa-solid fa-quote-right"></i>
-        </button>
-      {% endif %}
-    </div>
   </div>
 </article>

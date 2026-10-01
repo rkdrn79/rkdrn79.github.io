@@ -1,23 +1,20 @@
 {% assign award = include.award %}
-<article class="entry-card entry-card-dated award-card">
-  <div class="entry-date">{{ award.date }}</div>
-  <div class="entry-body">
-    <p class="entry-kicker">{{ award.organization }}</p>
-    <h3 class="entry-title">{{ award.title }}</h3>
-    <p>{{ award.description }}</p>
+<article class="award-card collection-item">
+  <div class="collection-date">{{ award.date }}</div>
+  <div class="collection-body">
+    <h3>{{ award.title }}</h3>
+    <p>{{ award.organization }}</p>
+    <p class="collection-desc">{{ award.description }}</p>
     {% if award.code or award.webpage %}
       <div class="paper-actions">
         {% if award.code %}
-          <a class="action-btn" href="{{ award.code }}" target="_blank" rel="noopener noreferrer" title="Code" aria-label="Open award project code">
-            <i class="fa-brands fa-github"></i>
-          </a>
+          <a class="action-btn" href="{{ award.code }}" target="_blank" rel="noopener noreferrer" title="Code" aria-label="Open award project code"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
         {% endif %}
         {% if award.webpage %}
-          <a class="action-btn" href="{{ award.webpage }}" target="_blank" rel="noopener noreferrer" title="Competition" aria-label="Open competition page">
-            <i class="fa-solid fa-trophy"></i>
-          </a>
+          <a class="action-btn" href="{{ award.webpage }}" target="_blank" rel="noopener noreferrer" title="Competition" aria-label="Open competition page"><i class="fa-solid fa-trophy" aria-hidden="true"></i></a>
         {% endif %}
       </div>
     {% endif %}
   </div>
+  {% if award.selected == "y" %}<span class="collection-badge">Selected</span>{% endif %}
 </article>
